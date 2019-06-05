@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-resources :activities
+resources :activities do
+    get "event", to: "event"
+  end
 
   devise_for :users
   root to: 'pages#home'
