@@ -53,26 +53,30 @@ Restaurant = Activity.new(
  name = "Le cirque",
  description = "Ce café d'auberge de jeunesse propose une petite restauration à base de produits bio, locaux et équitables.",
  category = "Restaurant Bio",
- city = "Lille"
- photo = ""
-
+ street = "139 Rue des Postes",
+ zipcode = "59000",
+ city = "Lille",
+ photo = "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737826/le_cirque_ykjjw7.jpg"
 )
 
 Epicerie = Activity.new(
  name = "Robin des bios",
  description = "Epicerie associatvie - Vrac et 100% Bio",
  category = "Restaurant Bio",
- city = "Lille"
- photo = ""
-
+ street = "23 Rue Gosselet",
+ zipcode = "59000",
+ city = "Lille",
+ photo = "https://res.cloudinary.com/dom4dvol9/image/upload/v1559738018/Robin_des_bio_qpxnlq.jpg"
 )
 
 Atelier = Activity.new(
   name = "Mademoiselle Biloba - L'atelier cosmétique",
   description = "Apprenez à réaliser vous-même vos cosmétiques et soins naturels lors de nos Ateliers",
   category = "DIY",
+  street = "104 Rue Saint-André",
+  zipcode = "59000",
   city = "Lille",
-  photo = ""
+  photo = "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737812/atelier_lkjzep.jpg"
 
 )
 
@@ -80,8 +84,10 @@ Shop = Activity.new(
   name = "el MARKET",
   description = "Eco friendly shop ",
   category = "Shopping",
+  street = "128 Rue Léon Gambetta",
+  zipcode = "59000",
   city = "Lille",
-  photo = ""
+  photo = "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737819/elmarket_aztxhp.png"
 )
 
 Dechets = Activity.new(
@@ -91,7 +97,7 @@ Dechets = Activity.new(
   city = "Lille",
   starting_date = "14/06/2019",
   ending_date = "14/06/2019",
-  photo = ""
+  photo = "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737829/worldcleanup_m5h0ln.png"
 )
 
 
@@ -99,18 +105,18 @@ Festival = Activity.new(
   name = "We Love Green Festival",
   description = "Une super programmation, une organisation eco-frindly",
   category = "Event",
-  city = "Paris"
+  city = "Arras",
   starting_date = "15/06/2019",
   ending_date = "16/06/2019",
-  photo = ""
+  photo = "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737824/festival_udaurr.png"
 )
 
 Salon = Activity.new(
   name = "Salon du Zero Dechet",
   description = "Retrouvez les acteurs les plus actifs de la communauté Zero Waste France",
   category = "Event",
-  city = "Paris"
-  starting_date = "15/06/2019"
-  ending_date = "16/06/2019"
-  photo = ""
+  city = "Lille",
+  starting_date = "20/06/2019",
+  ending_date = "23/06/2019",
+  photo = "https://res.cloudinary.com/dom4dvol9/image/upload/v1559738170/ZERO_DECHET_sk3n2d.jpg"
 )
