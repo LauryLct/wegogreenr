@@ -12,8 +12,7 @@ Activity.destroy_all
 
 Daniel = User.create!(
   email: "daniel@daniel.com",
-  password: "azerty",
-  
+  password: "azerty" 
 )
 Profile.create!(
   first_name: "Daniel",
@@ -27,7 +26,7 @@ Profile.create!(
 
 Laury = User.create!(
   email: "laury@laury.com",
-  password: "azerty",
+  password: "azerty"
 )
 Profile.create!(
   first_name: "Laury",
@@ -39,7 +38,7 @@ Profile.create!(
 
 Stephane = User.create!(
   email: "steph@steph.com",
-  password: "azerty",
+  password: "azerty"
 )
 Profile.create!(
   first_name: "Stephane",
@@ -47,21 +46,18 @@ Profile.create!(
   photo: "https://avatars1.githubusercontent.com/u/49432207?s=400&u=1756ce57a7fe5c8797ce7ff831587da1868714f7&v=4",
   age: 36,
   user: Stephane
-
 )
 
 Marie = User.create!(
   email: "marie@marie.com",
-  password: "azerty",
-
+  password: "azerty"
+)
 Profile.create!( 
   first_name:  "Marie",
   last_name: "Vincent",
   photo: "https://avatars2.githubusercontent.com/u/49431430?s=460&v=4",
   age: 32,
   user: Marie
-
-
 )
 
 Restaurant = Activity.create!(
@@ -71,7 +67,8 @@ Restaurant = Activity.create!(
  street: "139 Rue des Postes",
  zipcode: "59000",
  city: "Lille",
- photo: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737826/le_cirque_ykjjw7.jpg"
+ photo: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737826/le_cirque_ykjjw7.jpg",
+ user: Marie
 )
 
 Epicerie = Activity.create!(
@@ -81,7 +78,8 @@ Epicerie = Activity.create!(
  street: "23 Rue Gosselet",
  zipcode: "59000",
  city: "Lille",
- photo: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559738018/Robin_des_bio_qpxnlq.jpg"
+ photo: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559738018/Robin_des_bio_qpxnlq.jpg",
+ user: Marie
 )
 
 Atelier = Activity.create!(
@@ -91,7 +89,8 @@ Atelier = Activity.create!(
   street: "104 Rue Saint-André",
   zipcode: "59000",
   city: "Lille",
-  photo: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737812/atelier_lkjzep.jpg"
+  photo: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737812/atelier_lkjzep.jpg",
+  user: Daniel
 
 )
 
@@ -102,7 +101,8 @@ Shop = Activity.create!(
   street: "128 Rue Léon Gambetta",
   zipcode: "59000",
   city: "Lille",
-  photo: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737819/elmarket_aztxhp.png"
+  photo: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737819/elmarket_aztxhp.png",
+  user: Stephane
 )
 
 Dechets = Activity.create!(
@@ -112,7 +112,8 @@ Dechets = Activity.create!(
   city: "Lille",
   starting_date: "14/06/2019",
   ending_date: "14/06/2019",
-  photo: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737829/worldcleanup_m5h0ln.png"
+  photo: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737829/worldcleanup_m5h0ln.png",
+  user: Laury
 )
 
 Festival = Activity.create!(
@@ -122,7 +123,8 @@ Festival = Activity.create!(
   city: "Arras",
   starting_date: "15/06/2019",
   ending_date: "16/06/2019",
-  photo: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737824/festival_udaurr.png"
+  photo: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737824/festival_udaurr.png",
+  user: Marie
 )
 
 Salon = Activity.create!(
@@ -132,5 +134,6 @@ Salon = Activity.create!(
   city: "Lille",
   starting_date: "20/06/2019",
   ending_date: "23/06/2019",
-  photo: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559738170/ZERO_DECHET_sk3n2d.jpg"
+  photo: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559738170/ZERO_DECHET_sk3n2d.jpg",
+  user: Stephane
 )
