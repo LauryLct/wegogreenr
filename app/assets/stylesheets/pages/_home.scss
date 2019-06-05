@@ -3,7 +3,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  // padding-top: 40%;
+
   img {
     position: absolute;
     width: 200px;
@@ -12,7 +12,9 @@
   }
 }
 .title {
-  position: absolute;
+  color: white;
+  align-items: flex-end;
+  padding-top: 130%;
 }
 
 .landing {
@@ -20,11 +22,6 @@
   background-size: cover;
 }
 
-// .form-inputs .title-text {
-//   font-family: Josefin Sans;
-//   font-style: normal;
-//   font-weight: 600;
-//   font-size: 24px;
-//   line-height: 24px;
-//   color: lightgrey;
-// }
+.btn .btn-landing {
+  padding-top: 15px;
+}
