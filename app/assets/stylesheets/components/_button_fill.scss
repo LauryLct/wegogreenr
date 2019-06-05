@@ -1,5 +1,6 @@
 .EdgeButton--primary {
   border-radius: 100px;
+  border: none !important;
   box-shadow: none;
   cursor: pointer;
   font-size: 14px;
@@ -12,6 +13,6 @@
   white-space: nowrap;
   color: $light-grey;
   & :hover {
-    background: $green;
+    background: $green !important;
   }
 }
