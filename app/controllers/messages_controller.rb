@@ -16,4 +16,9 @@ class MessagesController < ApplicationController
 
   def update
   end
+
+  def event
+    activity = Activities.all
+    @event = activity.event
+  end
 end
