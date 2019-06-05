@@ -1,0 +1,30 @@
+.cards {
+  display: flex;
+  height: auto;
+  width: auto;
+  display: auto;
+  img{
+    height: 100%;
+    width: 100%;
+  }
+  .info-event{
+    padding: 10px;
+    h2 {
+      font-size: 22px;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+
+@media(max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
