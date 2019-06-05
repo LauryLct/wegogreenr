@@ -1,4 +1,6 @@
 class ActivitiesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:home, :index, :event]
+
   def index
   end
 
@@ -15,5 +17,9 @@ class ActivitiesController < ApplicationController
   end
 
   def update
+  end
+
+  def event
+    @activities = Activity.all
   end
 end
