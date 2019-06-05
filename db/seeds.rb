@@ -71,7 +71,7 @@ Atelier = Activity.new(
   name = "Mademoiselle Biloba - L'atelier cosmétique",
   description = "Apprenez à réaliser vous-même vos cosmétiques et soins naturels lors de nos Ateliers",
   category = "DIY",
-  city = "Lille"
+  city = "Lille",
   photo = ""
 
 )
@@ -80,17 +80,17 @@ Shop = Activity.new(
   name = "el MARKET",
   description = "Eco friendly shop ",
   category = "Shopping",
-  city = "Lille"
+  city = "Lille",
   photo = ""
 )
 
 Dechets = Activity.new(
   name = "World clean up day",
   description = "Ramassons les dechets dans nos quartiers ",
-  category = "Clean up",
-  city = "Lille"
-  starting_date = "14/06/2019"
-  ending_date = "14/06/2019"
+  category = "Event",
+  city = "Lille",
+  starting_date = "14/06/2019",
+  ending_date = "14/06/2019",
   photo = ""
 )
 
@@ -98,7 +98,17 @@ Dechets = Activity.new(
 Festival = Activity.new(
   name = "We Love Green Festival",
   description = "Une super programmation, une organisation eco-frindly",
-  category = "Festival",
+  category = "Event",
+  city = "Paris"
+  starting_date = "15/06/2019",
+  ending_date = "16/06/2019",
+  photo = ""
+)
+
+Salon = Activity.new(
+  name = "Salon du Zero Dechet",
+  description = "Retrouvez les acteurs les plus actifs de la communauté Zero Waste France",
+  category = "Event",
   city = "Paris"
   starting_date = "15/06/2019"
   ending_date = "16/06/2019"
