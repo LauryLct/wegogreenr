@@ -21,13 +21,14 @@
     position: absolute;
     width: 200px;
     top: 10px;
-    left: -50px;
+    left: 0px;
   }
 }
 
 .sign-bkg {
   background-size: cover;
-  background: linear-gradient(180deg, rgba(63, 57, 57, 0) 10.65%, #474545 100%), url(Login.jpeg), #c4c4c4;
+  background-image: url(Login.jpeg);
+  // background: linear-gradient(180deg, rgba(63, 57, 57, 0) 10.65%, #474545 100%), url(Login.jpeg), #c4c4c4;
 }
 
 .form-inputs {
