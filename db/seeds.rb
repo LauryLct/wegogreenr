@@ -115,7 +115,6 @@ Dechets = Activity.create!(
   photo: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737829/worldcleanup_m5h0ln.png"
 )
 
-
 Festival = Activity.create!(
   name: "We Love Green Festival",
   description: "Une super programmation, une organisation eco-frindly",
