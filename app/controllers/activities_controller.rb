@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index, :event, :show]
-  before_action :set_activity, only: [:show, :create, :new]
+  before_action :set_activity, only: [:show]
 
   def index
     @activities = Activity.where.not(latitude: nil, longitude: nil)
@@ -18,7 +18,6 @@ class ActivitiesController < ApplicationController
     @message = Message.new
     @message.activity_id = @activity[:id]
     @message.user_id = current_user[:id]
-
     @messages = @activity.messages
   end
 
