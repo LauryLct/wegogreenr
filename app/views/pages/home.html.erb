@@ -1,13 +1,48 @@
-<div class="container landing justify-content-center">
-  <div class="row justify-content-center">
-    <%= image_tag "Logo3.png" %>
-    <div class="col-8 col-lg-6">
-      <div class="title">
-        <h2>Partagez</h2>
-        <h2>Découvrez</h2>
-        <h2>Faites le plein d'idées Green</h2>
-      </div>
-      <div class="btn btn-landing"> <%= render  "shared/button_transp" %></div>
+<div class="banner">
+  <%= image_tag "Logo3.png" %>
+  <div class="landing">
+    <div class="title">
+      <h1>Partagez</h1>
+      <h1>Découvrez</h1>
+      <h2>Faites le plein d'idées Green autour de vous !</h2>
     </div>
+    <div class="text-center">
+      <div class="btn btn-landing">
+        <%= render  "shared/button_transp" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="values">
+  <center>
+    <h1>Les Valeurs GreenR</h1>
+  </center>
+</div>
+<div class="valeur-1">
+  <%= image_tag "guarantee.svg", class: "icon-guarantee" %>
+  <div>
+    <h5>AUTHENTIQUE</h5>
+    <p>Lorem ipsum lorem ipsum</p>
+  </div>
+</div>
+<div class="valeur-2">
+  <%= image_tag "location-pin.svg", class: "icon-location" %>
+  <div>
+    <h5>LOCAL</h5>
+    <p>Lorem ipsum lorem ipsum</p>
+  </div>
+</div>
+<div class="valeur-3">
+  <%= image_tag "plant.svg", class: "icon-plant" %>
+  <div>
+    <h5>GREEN</h5>
+    <p>Lorem ipsum lorem ipsum</p>
+  </div>
+</div>
+<div class="valeur-4">
+  <%= image_tag "heart.svg", class: "icon-heart" %>
+  <div>
+    <h5>SOLIDAIRE</h5>
+    <p>Lorem ipsum lorem ipsum</p>
   </div>
 </div>
