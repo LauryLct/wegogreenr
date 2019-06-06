@@ -12,7 +12,7 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/tany7374/cjwko4dfw1n4g1codjkapu833'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
 
@@ -25,8 +25,8 @@ const initMapbox = () => {
       element.className = 'marker';
       element.style.backgroundImage = `url('${marker.image_url}')`;
       element.style.backgroundSize = 'contain';
-      element.style.width = '25px';
-      element.style.height = '25px';
+      element.style.width = '30px';
+      element.style.height = '30px';
 
       new mapboxgl.Marker(element)
         .setLngLat([ marker.lng, marker.lat ])
