@@ -1,10 +1,12 @@
-<div class="card-event">`
-  <%= cl_image_tag activity.photo, class: "event-pic" %>
-  <div class="info-event">
-    <h3 style="font-size: 13px"><strong>Du <%= activity.starting_date.strftime("%d-%m-%Y") %> au <%= activity.ending_date.strftime("%d-%m-%Y") %> </strong></h3>
-    <h2><strong><%= activity.name %></strong></h2>
-    <div>
-      <p><%= activity.description %></p>
+<%= link_to activity_path(activity) do %>
+  <div class="card-event">
+    <%= cl_image_tag activity.photo, class: "event-pic" %>
+    <div class="info-event">
+      <h3 style="font-size: 13px"><strong>Du <%= activity.starting_date.strftime("%d-%m-%Y") %> au <%= activity.ending_date.strftime("%d-%m-%Y") %> </strong></h3>
+      <h2><strong><%= activity.name %></strong></h2>
+      <div>
+        <p><%= activity.description %></p>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
