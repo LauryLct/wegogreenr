@@ -6,9 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Profile.destroy_all
-User.destroy_all
+puts "all profiles destroyed"
 Activity.destroy_all
-
+puts "all activities destroyed"
+User.destroy_all
+puts "all users destroyed"
 
 daniel = User.create!(
   email: "daniel@daniel.com",
@@ -59,6 +61,9 @@ Profile.create!(
   age: 32,
   user: marie,
 )
+
+puts "all users & profiles created"
+
 
 restaurant = Activity.create!(
  name: "Le cirque",
@@ -137,3 +142,4 @@ salon = Activity.create!(
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559738170/ZERO_DECHET_sk3n2d.jpg",
   user: stephane,
 )
+puts "all activities created"
