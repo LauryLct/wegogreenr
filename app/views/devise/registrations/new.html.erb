@@ -1,7 +1,7 @@
 <div class="container sign-bkg">
   <div class="row justify-content-center">
-    <div class="form-img-bckg"><%= image_tag "Logo3.png" %></div>
     <div class="col-8 col-lg-6">
+      <div class="form-img-bckg"><%= image_tag "Logo3.png" %></div>
       <div class="form-sign">
         <h2>Je m'enregistre</h2>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -16,7 +16,7 @@
                 label: "Mot de passe",
                 placeholder: "******",
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
             <%= f.input :password_confirmation,
                 label: "Confirmez le mot de passe",
