@@ -6,6 +6,11 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @message = Message.new
+    @message.activity_id = @activity[:id]
+    @message.user_id = current_user[:id]
+
+    @messages = @activity.messages
   end
 
   def new

@@ -1,0 +1,4 @@
+<%= simple_form_for [activity, message] do |f| %>
+  <%= f.input :content, label: 'Ajoutez un message' %>
+  <%= f.button :submit, value: "j'envoie mon avis", class: "EdgeButton--secondary"  %>
+<% end %>

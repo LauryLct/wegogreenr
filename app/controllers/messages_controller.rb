@@ -1,24 +1,21 @@
 class MessagesController < ApplicationController
-  def index
-  end
-
-  def show
-  end
-
-  def new
-  end
 
   def create
+    @activity = Activity.find(params[:activity_id])
+    @message = Message.new(message_params)
+    @message.user = current_user
+    @message.activity_id = @activity.id
+
+    if @message.save
+      redirect_to activity_path(@activity)
+    else
+      redirect_to activities_path
+    end
   end
 
-  def edit
-  end
+  private
 
-  def update
-  end
-
-  def event
-    activity = Activities.all
-    @event = activity.event
+  def message_params
+    params.require(:message).permit(:content)
   end
 end
