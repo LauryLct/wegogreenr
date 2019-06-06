@@ -110,7 +110,7 @@ shop = Activity.create!(
 
 dechets = Activity.create!(
   name: "World clean up day",
-  description: "Ramassons les dechet dans nos quartiers ",
+  description: "Ramassons les déchets dans nos quartiers ",
   category: "Event",
   city: "Lille",
   starting_date: "14/06/2019",

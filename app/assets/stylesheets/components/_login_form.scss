@@ -1,3 +1,20 @@
+.sign-bkg {
+  // background-image: url(Login.jpg);
+  position: relative;
+  background: linear-gradient(180deg, rgba(63, 57, 57, 0) 68%, #474545 100%), url(Login.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-img-bckg {
+  img {
+    position: absolute;
+    width: 20%;
+    top: 10px;
+    left: 10px;
+  }
+}
 .form-sign {
   // text-align: center;
   position: relative;
@@ -16,24 +33,6 @@
   }
 }
 
-.form-img-bckg {
-  img {
-    position: absolute;
-    width: 20%;
-    top: 10px;
-    left: 10px;
-  }
-}
-
-.sign-bkg {
-  // background-image: url(Login.jpg);
-  position: relative;
-  background: linear-gradient(180deg, rgba(63, 57, 57, 0) 68%, #474545 100%), url(Login.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 .form-inputs {
   font-family: Josefin Sans;
   font-style: normal;
@@ -46,6 +45,7 @@
 
 .form-control {
   border-radius: 8px;
+  background-color: white;
 }
 
 .form-actions {
@@ -61,4 +61,22 @@
     font-family: "Josefin Sans";
     font-size: 20px;
   }
+}
+
+input::-webkit-input-placeholder {
+  color: lightgrey !important;
+}
+
+input:-moz-placeholder {
+  /* Firefox 18- */
+  color: lightgrey !important;
+}
+
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: lightgrey !important;
+}
+
+input:-ms-input-placeholder {
+  color: lightgrey !important;
 }
