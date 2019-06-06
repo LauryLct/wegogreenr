@@ -1,5 +1,5 @@
 <div class="event-pic-show">
-  <%= image_tag @activity.photo%>
+  <%= cl_image_tag @activity.photo%>
 </div>
 
 <div class="container">
@@ -13,9 +13,18 @@
     <p><%= @activity.description %></p>
   </div>
 
-  <div>
+  <div class="message-bloc overflow-auto">
     <% @messages.each do |message| %>
-      <p id="message"><%= message.content %></p>
+      <% if message.user_id != current_user[:id] %>
+        <p><%= message.user.profile.first_name %></p>
+        <p id="message"><%= message.content %></p>
+      <% else %>
+
+        <p class="text-mess"><%= message.user.profile.first_name %></p>
+        <p class="text-mess" id="message-current-user"><%= message.content %></p>
+
+
+      <% end  %>
 
     <% end %>
   </div>
