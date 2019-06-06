@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index, :event, :show]
-  before_action :set_activity, only: :show
+  before_action :set_activity, only: [:show]
 
   def index
     @activities = Activity.where.not(latitude: nil, longitude: nil)
@@ -18,14 +18,21 @@ class ActivitiesController < ApplicationController
     @message = Message.new
     # @message.activity_id = @activity[:id]
     # @message.user_id = current_user[:id]
-
     @messages = @activity.messages
   end
 
   def new
+   @activity = Activity.new
   end
 
   def create
+    @activity = Activity.new(activity_params)
+    @activity.user = current_user
+    if @activity.save
+      redirect_to activities_path(@activity)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -40,7 +47,12 @@ class ActivitiesController < ApplicationController
 
   private
 
-  def set_activity
-    @activity = Activity.find(params[:id])
+    def set_activity
+      @activity = Activity.find(params[:id])
+    end
+
+    def activity_params
+      params.require(:activity).permit(:name, :photo, :description, :category, :street, :zipcode, :city, :starting_date, :ending_date,)
+    end
   end
-end
+

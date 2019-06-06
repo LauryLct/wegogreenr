@@ -1,2 +1,35 @@
-<h1>Activities#new</h1>
-<p>Find me in app/views/activities/new.html.erb</p>
+<div class="container new-activity">
+  <div class="form-img-bckg"><%= image_tag "Logo3.png" %></div>
+  <div class="create-activity-form">
+    <br>
+    <br>
+    <br>
+    <center>
+      <h1> A vous de partager!</h1>
+    </center>
+    <%= simple_form_for @activity do |a| %>
+      <%= a.input :category,
+          label: "Que souhaitez-vous ajouter?",
+          collection: ["Shop eco-friendly", "Epicerie", "Restaurant Bio", "Atelier", "Event" ]%>
+      <%= a.input :name,
+          label: "Nom",
+          placeholder: "Entrez le nom du lieu ou de l'évènement" %>
+      <%= a.input :description, label: "Une petite description",
+          placeholder: "Faites nous réver!" %>
+      <%= a.input :street, label: "Rue",
+          placeholder: "1, rue de la bonne humeur" %>
+      <%= a.input :zipcode, label: "Code postal",
+          placeholder: "75000" %>
+      <%= a.input :city, label: "Ville",
+          placeholder: "Paris" %>
+      <%= a.input :starting_date,
+         label: "Date de début" %>
+      <%= a.input :ending_date, label: "Date de fin" %>
+      <%= a.input :photo %>
+      <%= a.input :photo_cache, as: :hidden %>
+      <center>
+        <%= a.button :submit, "Je partage !", class: "EdgeButton--primary" %>
+      </center>
+    <% end %>
+  </div>
+</div>
