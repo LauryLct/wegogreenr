@@ -1,3 +1,20 @@
+.sign-bkg {
+  // background-image: url(Login.jpg);
+  position: relative;
+  background: linear-gradient(180deg, rgba(63, 57, 57, 0) 68%, #474545 100%), url(Login.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-img-bckg {
+  img {
+    position: absolute;
+    width: 20%;
+    top: 10px;
+    left: 10px;
+  }
+}
 .form-sign {
   // text-align: center;
   position: relative;
@@ -14,24 +31,6 @@
     padding-bottom: 10px;
     padding-top: 20px;
   }
-}
-
-.form-img-bckg {
-  img {
-    position: absolute;
-    width: 20%;
-    top: 10px;
-    left: 10px;
-  }
-}
-
-.sign-bkg {
-  // background-image: url(Login.jpg);
-  position: relative;
-  background: linear-gradient(180deg, rgba(63, 57, 57, 0) 68%, #474545 100%), url(Login.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .form-inputs {
