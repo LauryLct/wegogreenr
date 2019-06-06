@@ -1,2 +1,18 @@
 <h1>Activities#create</h1>
 <p>Find me in app/views/activities/create.html.erb</p>
+<div class="container">
+  <h1> A vous de partager!</h1>
+  <div class="shadow-sm p-3 mb-5 bg-white rounded">
+    <%= simple_form_for @activity do |a| %>
+      <%= a.input :category, label: "Que souhaitez-vous ajouter?" %>
+      <%= a.input :name, label: "Nom" %>
+      <%= a.input :description, label: "Faites nous réver!" %>
+      <%= a.input :street, label: "Rue" %>
+      <%= a.input :zipcode, label: "Code postal" %>
+      <%= a.input :city, label: "Ville" %>
+      <%= a.input :starting_date, label: "Date de début" %>
+      <%= a.input :ending_date, label: "Date de fin" %>
+      <%= f.button :submit, label: "Créer" %>
+    <% end %>
+  </div>
+</div>

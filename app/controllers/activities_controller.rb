@@ -26,6 +26,12 @@ class ActivitiesController < ApplicationController
   end
 
   def create
+    @activity = Activity.new(activity_params)
+    if @activity.save
+      redirect_to activities_path(@activity)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -40,7 +46,13 @@ class ActivitiesController < ApplicationController
 
   private
 
-  def set_activity
-    @activity = Activity.find(params[:id])
+    def set_activity
+      @activity = Activity.find(params[:id])
+    end
+
+    def activity_params
+      params.require(:activity).permit(:name, :photo, :price, :description, :category, :street, :zipcode, :city, :starting_date, :ending_date,)
+    end
+
   end
-end
+
