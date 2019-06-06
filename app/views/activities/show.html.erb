@@ -12,5 +12,17 @@
     <h2>description :</h2>
     <p><%= @activity.description %></p>
   </div>
+
+  <div>
+    <% @messages.each do |message| %>
+      <p id="message"><%= message.content %></p>
+
+    <% end %>
+  </div>
+
+  <div class="Form-message">
+    <%= render "activities/components/form_messages", activity: @activity, message: @message %>
+  </div>
+
 </div>
 
