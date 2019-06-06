@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index, :event, :show]
-  before_action :set_activity, only: :show
+  before_action :set_activity, only: [:show, :create, :new]
 
   def index
     @activities = Activity.where.not(latitude: nil, longitude: nil)
@@ -23,10 +23,12 @@ class ActivitiesController < ApplicationController
   end
 
   def new
+   @activity = Activity.new
   end
 
   def create
     @activity = Activity.new(activity_params)
+    @activity.user = current_user
     if @activity.save
       redirect_to activities_path(@activity)
     else
@@ -51,8 +53,7 @@ class ActivitiesController < ApplicationController
     end
 
     def activity_params
-      params.require(:activity).permit(:name, :photo, :price, :description, :category, :street, :zipcode, :city, :starting_date, :ending_date,)
+      params.require(:activity).permit(:name, :photo, :description, :category, :street, :zipcode, :city, :starting_date, :ending_date,)
     end
-
   end
 
