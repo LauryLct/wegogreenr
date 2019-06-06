@@ -6,9 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Profile.destroy_all
-User.destroy_all
+puts "all profiles destroyed"
 Activity.destroy_all
-
+puts "all activities destroyed"
+User.destroy_all
+puts "all users destroyed"
 
 daniel = User.create!(
   email: "daniel@daniel.com",
@@ -19,7 +21,7 @@ Profile.create!(
   last_name: "Feline",
   remote_photo_url: "https://avatars3.githubusercontent.com/u/45879795?s=460&v=4",
   age: 44,
-  user: daniel
+  user: daniel,
 )
 
 
@@ -33,7 +35,7 @@ Profile.create!(
   last_name: "Lecaut",
   remote_photo_url: "https://avatars3.githubusercontent.com/u/32016201?s=460&v=4",
   age: 32,
-  user: laury
+  user: laury,
 )
 
 stephane = User.create!(
@@ -45,7 +47,7 @@ Profile.create!(
   last_name: "Vincent",
   remote_photo_url: "https://avatars1.githubusercontent.com/u/49432207?s=400&u=1756ce57a7fe5c8797ce7ff831587da1868714f7&v=4",
   age: 36,
-  user: stephane
+  user: stephane,
 )
 
 marie = User.create!(
@@ -57,8 +59,10 @@ Profile.create!(
   last_name: "Vincent",
   remote_photo_url: "https://avatars2.githubusercontent.com/u/49431430?s=460&v=4",
   age: 32,
-  user: marie
+  user: marie,
 )
+
+puts "all users & profiles created"
 
 restaurant = Activity.create!(
  name: "Le cirque",
@@ -68,7 +72,7 @@ restaurant = Activity.create!(
  zipcode: "59000",
  city: "Lille",
  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737826/le_cirque_ykjjw7.jpg",
- user: marie
+ user: marie,
 )
 
 epicerie = Activity.create!(
@@ -79,7 +83,7 @@ epicerie = Activity.create!(
  zipcode: "59000",
  city: "Lille",
  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559738018/Robin_des_bio_qpxnlq.jpg",
- user: marie
+ user: marie,
 )
 
 atelier = Activity.create!(
@@ -90,8 +94,7 @@ atelier = Activity.create!(
   zipcode: "59000",
   city: "Lille",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737812/atelier_lkjzep.jpg",
-  user: daniel
-
+  user: daniel,
 )
 
 shop = Activity.create!(
@@ -102,10 +105,10 @@ shop = Activity.create!(
   zipcode: "59000",
   city: "Lille",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737819/elmarket_aztxhp.png",
-  user: stephane
+  user: stephane,
 )
 
-dechet = Activity.create!(
+dechets = Activity.create!(
   name: "World clean up day",
   description: "Ramassons les dechet dans nos quartiers ",
   category: "Event",
@@ -113,27 +116,28 @@ dechet = Activity.create!(
   starting_date: "14/06/2019",
   ending_date: "14/06/2019",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737829/worldcleanup_m5h0ln.png",
-  user: laury
+  user: laury,
 )
 
 festival = Activity.create!(
-  name: "We Love Green festival",
-  description: "Une super programmation, une organisation eco-frindly",
+  name: "We Love Green Festival",
+  description: "Une super programmation, une organisation eco-friendly",
   category: "Event",
   city: "Arras",
   starting_date: "15/06/2019",
   ending_date: "16/06/2019",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737824/festival_udaurr.png",
-  user: marie
+  user: marie,
 )
 
 salon = Activity.create!(
-  name: "salon du Zero Dechet",
+  name: "Salon du Zéro Dechet",
   description: "Retrouvez les acteurs les plus actifs de la communauté Zero Waste France",
   category: "Event",
   city: "Lille",
   starting_date: "20/06/2019",
   ending_date: "23/06/2019",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559738170/ZERO_DECHET_sk3n2d.jpg",
-  user: stephane
+  user: stephane,
 )
+puts "all activities created"

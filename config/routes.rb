@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-resources :activities do
-    get "event", to: "event"
+  resources :activities do
+    collection do
+      get "event", to: "activities#event"
+    end
   end
 
   devise_for :users

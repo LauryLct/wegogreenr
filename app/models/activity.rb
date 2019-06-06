@@ -6,6 +6,8 @@ class Activity < ApplicationRecord
   def address
     [street, zipcode, city].compact.join(', ')
   end
+  
   mount_uploader :photo, PhotoUploader
   after_validation :geocode
+
 end

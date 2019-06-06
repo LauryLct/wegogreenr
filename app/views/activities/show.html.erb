@@ -1,2 +1,16 @@
-<h1>Activities#show</h1>
-<p>Find me in app/views/activities/show.html.erb</p>
+<div class="event-pic-show">
+  <%= image_tag @activity.photo%>
+</div>
+
+<div class="container">
+  <div class="event-txt-show">
+    <h1><%= @activity.name %></h1>
+    <p><%= @activity.street %>, <%= @activity.city %>, <%= @activity.zipcode %></p>
+    <% if @activity.starting_date.blank? == false %>
+      <p><%= @activity.starting_date %> - <%= @activity.ending_date %></p>
+    <% end %>
+    <h2>description :</h2>
+    <p><%= @activity.description %></p>
+  </div>
+</div>
+

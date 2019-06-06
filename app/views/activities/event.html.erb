@@ -1,0 +1,14 @@
+<div class="container">
+  <h1> Tous les events</h1>
+
+
+  <div class="grid">
+    <% @activities.each do |activity| %>
+      <% if activity.category == "Event" %>
+        <%= render "activities/cards_event", activity: activity %>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
+

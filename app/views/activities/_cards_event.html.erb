@@ -1,12 +1,10 @@
-<div class="cards shadow mb-3 bg-white rounded">
-  <div>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPLJ2BePErT2DWwBbmjSbHpjKdJIqmiPgAzW6rYGC8x2Zy7h2x">
-  </div>
-
+<div class="card-event">`
+  <%= cl_image_tag activity.photo, class: "event-pic" %>
   <div class="info-event">
-    <h2> 10 juillet - 11 juillet </h2>
-    <h2>Nom de l'événement</h2>
-    <p>Petit festival des familles</p>
+    <h3 style="font-size: 13px"><strong>Du <%= activity.starting_date.strftime("%d-%m-%Y") %> au <%= activity.ending_date.strftime("%d-%m-%Y") %> </strong></h3>
+    <h2><strong><%= activity.name %></strong></h2>
+    <div>
+      <p><%= activity.description %></p>
+    </div>
   </div>
-
 </div>
