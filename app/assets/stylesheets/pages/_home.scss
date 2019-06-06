@@ -1,1 +1,91 @@
 // Specific CSS for your home-page
+
+.banner {
+  img {
+    position: absolute;
+    width: 200px;
+    top: 10px;
+    left: 15px;
+  }
+}
+
+.landing {
+  // position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  color: white;
+  align-items: flex-end;
+  padding: 30px;
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+
+.banner {
+  background-image: asset-url("landing.jpeg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.btn .btn-landing {
+  padding-top: 15px;
+  // position: absolute;
+  // left: 100px;
+  // bottom: 30px;
+}
+
+.values {
+  background-color: #044343;
+  color: white;
+}
+
+.icon-guarantee {
+  fill: #045757;
+  width: 60px;
+  margin-right: 40px;
+}
+
+.icon-location {
+  fill: #045757;
+  width: 60px;
+  margin-right: 40px;
+}
+
+.icon-heart {
+  fill: #045757;
+  width: 60px;
+  margin-right: 40px;
+}
+
+.icon-plant {
+  fill: #045757;
+  width: 60px;
+  margin-right: 40px;
+}
+
+.valeur-1 {
+  margin: 50px;
+  display: flex;
+  align-items: center;
+}
+.valeur-2 {
+  margin: 50px;
+  display: flex;
+  align-items: center;
+}
+.valeur-3 {
+  margin: 50px;
+  display: flex;
+  align-items: center;
+}
+.valeur-4 {
+  margin: 50px;
+  display: flex;
+  align-items: center;
+}
