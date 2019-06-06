@@ -1,7 +1,8 @@
 class Activity < ApplicationRecord
   belongs_to :user
-  has_many :messages
   geocoded_by :address
+  has_many :messages, dependent: :destroy
+
 
   def address
     [street, zipcode, city].compact.join(', ')
