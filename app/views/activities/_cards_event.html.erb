@@ -1,5 +1,5 @@
 <div class="card-event">`
-  <%= image_tag activity.photo, class: "event-pic" %>
+  <%= cl_image_tag activity.photo, class: "event-pic" %>
   <div class="info-event">
     <h3 style="font-size: 13px"><strong>Du <%= activity.starting_date %> au <%= activity.ending_date %> </strong></h3>
     <h2><strong><%= activity.name %></strong></h2>
