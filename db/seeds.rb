@@ -14,7 +14,7 @@ puts "all users destroyed"
 
 daniel = User.create!(
   email: "daniel@daniel.com",
-  password: "azerty" 
+  password: "azerty"
 )
 Profile.create!(
   first_name: "Daniel",
@@ -54,7 +54,7 @@ marie = User.create!(
   email: "marie@marie.com",
   password: "azerty"
 )
-Profile.create!( 
+Profile.create!(
   first_name:  "Marie",
   last_name: "Vincent",
   remote_photo_url: "https://avatars2.githubusercontent.com/u/49431430?s=460&v=4",
@@ -64,11 +64,10 @@ Profile.create!(
 
 puts "all users & profiles created"
 
-
 restaurant = Activity.create!(
  name: "Le cirque",
  description: "Ce café d'auberge de jeunesse propose une petite restauration à base de produits bio, locaux et équitables.",
- category: "Restaurant Bio",
+ category: "restaurant Bio",
  street: "139 Rue des Postes",
  zipcode: "59000",
  city: "Lille",
@@ -78,8 +77,8 @@ restaurant = Activity.create!(
 
 epicerie = Activity.create!(
  name: "Robin des bios",
- description: "Epicerie associative - Vrac et 100% Bio",
- category: "Restaurant Bio",
+ description: "epicerie associative - Vrac et 100% Bio",
+ category: "restaurant Bio",
  street: "23 Rue Gosselet",
  zipcode: "59000",
  city: "Lille",
@@ -96,7 +95,6 @@ atelier = Activity.create!(
   city: "Lille",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737812/atelier_lkjzep.jpg",
   user: daniel,
-
 )
 
 shop = Activity.create!(
@@ -112,7 +110,7 @@ shop = Activity.create!(
 
 dechets = Activity.create!(
   name: "World clean up day",
-  description: "Ramassons les dechets dans nos quartiers ",
+  description: "Ramassons les dechet dans nos quartiers ",
   category: "Event",
   city: "Lille",
   starting_date: "14/06/2019",

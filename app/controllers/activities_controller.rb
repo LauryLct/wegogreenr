@@ -3,6 +3,15 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: :show
 
   def index
+    @activities = Activity.where.not(latitude: nil, longitude: nil)
+
+    @markers = @activities.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        image_url: helpers.asset_url('Logo3-simple.png')
+      }
+    end
   end
 
   def show
