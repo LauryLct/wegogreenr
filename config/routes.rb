@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     collection do
       get "event", to: "activities#event"
     end
+    resources :messages, only: [:create]
   end
 
   devise_for :users
