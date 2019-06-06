@@ -16,8 +16,8 @@ class ActivitiesController < ApplicationController
 
   def show
     @message = Message.new
-    @message.activity_id = @activity[:id]
-    @message.user_id = current_user[:id]
+    # @message.activity_id = @activity[:id]
+    # @message.user_id = current_user[:id]
 
     @messages = @activity.messages
   end
@@ -35,7 +35,7 @@ class ActivitiesController < ApplicationController
   end
 
   def event
-    @activities = Activity.all
+    @activities = Activity.order('starting_date ASC').all
   end
 
   private
