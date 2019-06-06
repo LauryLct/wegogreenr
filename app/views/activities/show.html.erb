@@ -1,28 +1,22 @@
 <div class="event-pic-show">
-  <%= image_tag @activity.photo%>
+  <%= cl_image_tag @activity.photo%>
 </div>
-
 <div class="container">
   <div class="event-txt-show">
-    <h1><%= @activity.name %></h1>
-    <p><%= @activity.street %>, <%= @activity.city %>, <%= @activity.zipcode %></p>
+    <h1><strong><%= @activity.name %></strong></h1>
+    <p>lieu: <%= @activity.street %>, <%= @activity.city %>, <%= @activity.zipcode %></p>
     <% if @activity.starting_date.blank? == false %>
-      <p><%= @activity.starting_date %> - <%= @activity.ending_date %></p>
+      <p>Du <%= @activity.starting_date.strftime("%d-%m-%Y") %> au <%= @activity.ending_date.strftime("%d-%m-%Y") %></p>
     <% end %>
-    <h2>description :</h2>
+    <h2><strong>description :</strong></h2>
     <p><%= @activity.description %></p>
   </div>
-
   <div>
     <% @messages.each do |message| %>
       <p id="message"><%= message.content %></p>
-
     <% end %>
   </div>
-
   <div class="Form-message">
     <%= render "activities/components/form_messages", activity: @activity, message: @message %>
   </div>
-
 </div>
-
