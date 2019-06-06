@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Profile.destroy_all
 puts "all profiles destroyed"
-User.destroy_all
-puts "all users destroyed"
 Activity.destroy_all
 puts "all activities destroyed"
+User.destroy_all
+puts "all users destroyed"
 
 daniel = User.create!(
   email: "daniel@daniel.com",
