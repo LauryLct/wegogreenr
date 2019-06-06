@@ -3,20 +3,23 @@
     <div class="form-img-bckg"><%= image_tag "Logo3.png" %></div>
     <div class="col-8 col-lg-6">
       <div class="form-sign">
-        <h2>Log in</h2>
+        <h2>Je m'identifie</h2>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
             <%= f.input :email,
-                required: false,
+                required: true,
+                placeholder: "nikolas.bulot@wegogreenr.com",
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
             <%= f.input :password,
-                required: false,
+                label: "Mot de passe",
+                placeholder: "******",
+                required: true,
                 input_html: { autocomplete: "current-password" } %>
-            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            <%= f.input :remember_me, label: "Se souvenir de moi", as: :boolean if devise_mapping.rememberable? %>
           </div>
           <div class="form-actions">
-            <%= f.button :submit, "S'identifier", class: "EdgeButton--primary" %>
+            <%= f.button :submit, "Let's go GreenR", class: "EdgeButton--primary" %>
           </div>
         <% end %>
         <div class="form-shared-links">
