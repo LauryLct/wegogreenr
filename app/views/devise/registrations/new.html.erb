@@ -1,35 +1,36 @@
 <div class="container sign-bkg">
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-6">
+    <div class="form-img-bckg"><%= image_tag "Logo3.png" %></div>
+    <div class="col-8 col-lg-6">
       <div class="form-sign">
-        <h2>Sign up</h2>
-        <%= image_tag "Logo3.png" %>
+        <h2>Je m'enregistre</h2>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
-          <div class="form-inputs title-text">
+          <div class="form-inputs">
             <%= f.input :email,
                 required: true,
                 autofocus: true,
-                placeholder: "jean.paille@wegogreenr.com",
+                placeholder: "nikolas.bulot@wegogreenr.com",
                 input_html: { autocomplete: "email" }%>
             <%= f.input :password,
                 label: "Mot de passe",
-                input_html: "text",
                 placeholder: "******",
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
             <%= f.input :password_confirmation,
-                label: "Mot de passe",
+                label: "Confirmez le mot de passe",
                 placeholder: "******",
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
           </div>
           <div class="form-actions">
-            <%= f.button :submit, "Valider", class: "EdgeButton--primary" %>
+            <%= f.button :submit, "Let's go GreenR", class: "EdgeButton--primary" %>
           </div>
         <% end %>
-        <%= render "devise/shared/links" %>
+        <div class="form-shared-links">
+          <%= render "devise/shared/links" %>
+        </div>
       </div>
     </div>
   </div>
