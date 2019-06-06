@@ -3,7 +3,7 @@
     <div class="form-img-bckg"><%= image_tag "Logo3.png" %></div>
     <div class="col-8 col-lg-6">
       <div class="form-sign">
-        <h2>Je modifie votre mot de passe</h2>
+        <h2>Je modifie mon mot de passe</h2>
         <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
           <%= f.error_notification %>
           <%= f.input :reset_password_token, as: :hidden %>
