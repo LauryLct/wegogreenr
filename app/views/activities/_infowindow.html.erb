@@ -1,6 +1,14 @@
 <div class= mapbox>
-  <%= cl_image_tag(activity.photo, height: 100, width: 200, crop: :fill,) %>
-  <h5><%= activity.name %></h5>
-  <p><%= activity.address %></p>
-  <p><%= activity.description %></p>
+  <%= link_to activity_path(activity), class: "activity-link-show" do %>
+    <%= cl_image_tag(activity.photo, height: 100, width: 200, crop: :fill,) %>
+    <div class="mapbox-title">
+      <h5><%= activity.name %></h5>
+    </div>
+    <div class="mapbox-address">
+      <p><%= activity.address %></p>
+    </div>
+    <div class="mapbox-description">
+      <p><%= activity.description %></p>
+    </div>
+  <%end%>
 </div>

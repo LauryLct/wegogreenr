@@ -19,6 +19,7 @@ class ActivitiesController < ApplicationController
     @message = Message.new
     # @message.activity_id = @activity[:id]
     # @message.user_id = current_user[:id]
+    session[:current_path] = activity_path(@activity)
     @messages = @activity.messages
   end
 
