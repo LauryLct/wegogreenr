@@ -21,6 +21,8 @@ class ActivitiesController < ApplicationController
     # @message.user_id = current_user[:id]
     session[:current_path] = activity_path(@activity)
     @messages = @activity.messages
+
+    @review= Review.new
   end
 
   def new
