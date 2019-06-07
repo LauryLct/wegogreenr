@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :activities do
+    resources :reviews, only: [ :new, :create ]
     collection do
       get "event", to: "activities#event"
     end
