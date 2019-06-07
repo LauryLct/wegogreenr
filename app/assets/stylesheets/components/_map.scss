@@ -23,8 +23,20 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2) !important;
 }
 
+.mapbox h5 {
+  font-family: 'Hind';
+  font-weight: bold;
+  color: $dark-green;
+}
+
+.mapbox p {
+  font-family: 'Rajdhani';
+}
+
 .mapbox img {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2) !important;
+  border-radius: 3px;
+  margin-bottom: 5px;
 }
 
 .mapboxgl-popup-tip {
@@ -42,6 +54,10 @@
   opacity: 0.6;
 }
 
+.mapboxgl-ctrl-top {
+  z-index: 5;
+}
+
 .mapbox-title {
   padding-top: 15px;
 }
@@ -51,4 +67,5 @@
 }
 
 .mapbox-description {
+
 }
