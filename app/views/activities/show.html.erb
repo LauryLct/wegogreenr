@@ -10,8 +10,8 @@
 </div>
 <div >
   <% @activity.reviews.each do |review| %>
-    <p class="border rouded p-3" style="background-color: white"><%= review.rate  %></p>
-  <% end %>
+    <%= review.rate  %></p>
+<% end %>
 </div>
 </div>
 <div class="container">
