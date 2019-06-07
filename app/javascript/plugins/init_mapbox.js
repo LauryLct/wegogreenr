@@ -40,7 +40,7 @@ const initMapbox = () => {
            enableHighAccuracy: true
        },
        trackUserLocation: true
-    }));
+    }), 'bottom-left');
   }
 };
 
