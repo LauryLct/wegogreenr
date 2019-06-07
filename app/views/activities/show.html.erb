@@ -1,6 +1,7 @@
 <div class="event-pic-show">
   <%= cl_image_tag @activity.photo%>
 </div>
+<%= javascript_pack_tag 'application' %> 
 <div class="shadow p-3 mb-5 bg-white rounded">
   <%= simple_form_for [@activity, @review] do |r| %>
     <%= r.input :rate, class: "shadow-sm p-3 mb-5 bg-white rounded", value: 'Donnez une note', collection: [1, 2, 3, 4, 5 ] %>
