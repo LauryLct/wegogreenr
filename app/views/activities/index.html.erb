@@ -7,7 +7,6 @@
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   >
-    <%= render "./shared/navbar", class: "mapboxgl-ctrl-top-right" %>
     <%= image_tag "Truc_arrondi.png", id: "fond", class: "mapboxgl-ctrl-top-left" %>
     <%= link_to "#" do %>
       <%= image_tag "Logo3.png", id: "gros_logo", class: "mapboxgl-ctrl-top-left" %>
