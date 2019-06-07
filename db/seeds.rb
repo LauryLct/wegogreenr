@@ -67,7 +67,7 @@ puts "all users & profiles created"
 restaurant = Activity.create!(
  name: "Le cirque",
  description: "Ce café d'auberge de jeunesse propose une petite restauration à base de produits bio, locaux et équitables.",
- category: "restaurant Bio",
+ category: "restaurant",
  street: "139 Rue des Postes",
  zipcode: "59000",
  city: "Lille",
@@ -78,7 +78,7 @@ restaurant = Activity.create!(
 epicerie = Activity.create!(
  name: "Robin des bios",
  description: "epicerie associative - Vrac et 100% Bio",
- category: "restaurant Bio",
+ category: "alimentation",
  street: "23 Rue Gosselet",
  zipcode: "59000",
  city: "Lille",
@@ -100,7 +100,7 @@ atelier = Activity.create!(
 shop = Activity.create!(
   name: "el MARKET",
   description: "Eco friendly shop ",
-  category: "Shopping",
+  category: "shopping",
   street: "128 Rue Léon Gambetta",
   zipcode: "59000",
   city: "Lille",
@@ -111,7 +111,7 @@ shop = Activity.create!(
 dechets = Activity.create!(
   name: "World clean up day",
   description: "Ramassons les déchets dans nos quartiers ",
-  category: "Event",
+  category: "event",
   city: "Lille",
   starting_date: "14/06/2019",
   ending_date: "14/06/2019",
@@ -122,7 +122,7 @@ dechets = Activity.create!(
 festival = Activity.create!(
   name: "We Love Green Festival",
   description: "Une super programmation, une organisation eco-friendly",
-  category: "Event",
+  category: "event",
   city: "Arras",
   starting_date: "15/06/2019",
   ending_date: "16/06/2019",
@@ -133,7 +133,7 @@ festival = Activity.create!(
 salon = Activity.create!(
   name: "Salon du Zéro Dechet",
   description: "Retrouvez les acteurs les plus actifs de la communauté Zero Waste France",
-  category: "Event",
+  category: "event",
   city: "Lille",
   starting_date: "20/06/2019",
   ending_date: "23/06/2019",
