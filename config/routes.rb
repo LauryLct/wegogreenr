@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => "/cable"
   resources :activities do
     collection do
       get "event", to: "activities#event"
     end
-    resources :messages, only: [:create]
   end
+  resources :messages, only: [:create]
 
   devise_for :users
   root to: 'pages#home'

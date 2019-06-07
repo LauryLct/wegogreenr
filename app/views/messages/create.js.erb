@@ -1,0 +1,27 @@
+  function scrollLastMessageIntoView() {
+    const messages = document.querySelectorAll('.message');
+    const lastMessage = messages[messages.length - 1];
+    lastMessage.scrollIntoView();
+  }
+  console.log('should be here')
+  App['activity_<%= @activity.id %>'] = App.cable.subscriptions.create({ channel: 'ActivityChannel',
+  activity_id: <%= @activity.id %> },
+    { received: (truc) => {
+      if (truc.type === 'message') {
+      const messagesContainer = document.querySelector(".messages");
+      messagesContainer.insertAdjacentHTML('beforeend',
+       `
+        <div class=“message owner”>
+           <div class=“message-infos”>
+             <p class=“message-infos-author”>${truc.data.sender}</p>
+           </div>
+           <div class=“message-body”>
+             ${truc.data.message.content}
+           </div>
+         </div>
+        `
+      );
+      scrollLastMessageIntoView();
+      }
+    }
+    })
