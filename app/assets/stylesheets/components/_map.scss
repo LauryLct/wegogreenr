@@ -1,10 +1,12 @@
 .mapboxgl-popup {
   max-width: 200px;
+  position: relative;
+  z-index: 50;
 }
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .mapboxgl-ctrl-geocoder {
@@ -12,13 +14,13 @@
 }
 
 .mapboxgl-popup {
-overflow-y: scroll;
-overflow-x: scroll;
-border-radius: 20px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  border-radius: 20px;
 }
 
 .mapboxgl-popup-content {
-  box-shadow: 0 0 15px rgba(0,0,0,0.2) !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2) !important;
 }
 
 .mapbox h5 {
@@ -38,7 +40,7 @@ border-radius: 20px;
 }
 
 .mapboxgl-popup-tip {
-  box-shadow: 0 0 15px rgba(0,0,0,0.2) !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2) !important;
 }
 
 #gros_logo {
@@ -56,9 +58,14 @@ border-radius: 20px;
   z-index: 5;
 }
 
-.navbar-dark {
-  justify-content: space-between;
-  background: transparent;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  transition: 0.2s;
+.mapbox-title {
+  padding-top: 15px;
+}
+
+.mapbox-address {
+  font-style: italic;
+}
+
+.mapbox-description {
+
 }
