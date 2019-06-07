@@ -23,6 +23,7 @@ class ActivitiesController < ApplicationController
     @messages = @activity.messages
 
     @review= Review.new
+    @review.activity = @activity
   end
 
   def new
@@ -56,7 +57,7 @@ class ActivitiesController < ApplicationController
     end
 
     def activity_params
-      params.require(:activity).permit(:name, :photo, :description, :category, :street, :zipcode, :city, :starting_date, :ending_date,)
+      params.require(:activity).permit(:name, :photo, :description, :category, :street, :zipcode, :city, :starting_date, :ending_date, )
     end
   end
 

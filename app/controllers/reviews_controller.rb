@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
 def create
 @activity = Activity.find(params[:activity_id])
 @review = Review.new(review_params)
-@review.activity_id = @activity.activity_id
+@review.activity = @activity
 
   if @review.save
     redirect_to activity_path(@activity)
