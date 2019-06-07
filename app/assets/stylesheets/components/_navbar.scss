@@ -2,10 +2,11 @@
   position: fixed;
   right: 20px;
   top: 20px;
-  justify-content: space-between;
+  justify-content: flex-end;
   background: transparent !important;
   z-index: 10;
-  display: block;
+  display: flex;
+  width: 50px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -26,5 +27,3 @@
 .navbar-toggler {
   font-size: 16px;
 }
-
-
