@@ -9,7 +9,7 @@ class ActivitiesController < ApplicationController
       {
         lat: activity.latitude,
         lng: activity.longitude,
-        image_url: helpers.asset_url('Logo3-simple-plein.png'),
+        image_url: helpers.asset_url("#{activity.category}.png"),
         infoWindow: render_to_string(partial: "infowindow", locals: { activity: activity })
       }
     end
