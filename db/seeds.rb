@@ -67,7 +67,7 @@ puts "all users & profiles created"
 restaurant = Activity.create!(
  name: "Le cirque",
  description: "Ce café d'auberge de jeunesse propose une petite restauration à base de produits bio, locaux et équitables.",
- category: "restaurant",
+ category: "Restaurant",
  street: "139 Rue des Postes",
  zipcode: "59000",
  city: "Lille",
@@ -78,7 +78,7 @@ restaurant = Activity.create!(
 epicerie = Activity.create!(
  name: "Robin des bios",
  description: "epicerie associative - Vrac et 100% Bio",
- category: "alimentation",
+ category: "Alimentation",
  street: "23 Rue Gosselet",
  zipcode: "59000",
  city: "Lille",
@@ -99,8 +99,8 @@ atelier = Activity.create!(
 
 shop = Activity.create!(
   name: "el MARKET",
-  description: "Eco friendly shop ",
-  category: "shopping",
+  description: "Shop eco-responsable",
+  category: "Shop",
   street: "128 Rue Léon Gambetta",
   zipcode: "59000",
   city: "Lille",
@@ -111,7 +111,7 @@ shop = Activity.create!(
 dechets = Activity.create!(
   name: "World clean up day",
   description: "Ramassons les déchets dans nos quartiers ",
-  category: "event",
+  category: "Event",
   city: "Lille",
   starting_date: "14/06/2019",
   ending_date: "14/06/2019",
@@ -120,10 +120,10 @@ dechets = Activity.create!(
 )
 
 festival = Activity.create!(
-  name: "We Love Green Festival",
+  name: "We Love Green Festival Lambersart",
   description: "Une super programmation, une organisation eco-friendly",
-  category: "event",
-  city: "Arras",
+  category: "Event",
+  city: "Lambersart",
   starting_date: "15/06/2019",
   ending_date: "16/06/2019",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737824/festival_udaurr.png",
@@ -133,7 +133,7 @@ festival = Activity.create!(
 salon = Activity.create!(
   name: "Salon du Zéro Dechet",
   description: "Retrouvez les acteurs les plus actifs de la communauté Zero Waste France",
-  category: "event",
+  category: "Event",
   city: "Lille",
   starting_date: "20/06/2019",
   ending_date: "23/06/2019",
