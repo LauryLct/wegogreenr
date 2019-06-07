@@ -3,9 +3,15 @@
 </div>
 <div class="shadow p-3 mb-5 bg-white rounded">
   <%= simple_form_for [@activity, @review] do |r| %>
-    <%= r.input :rate, class: "shadow-sm p-3 mb-5 bg-white rounded", value: 'Donnez une note' %>
+    <%= r.input :rate, class: "shadow-sm p-3 mb-5 bg-white rounded", value: 'Donnez une note', collection: [1, 2, 3, 4, 5 ] %>
     <%= r.button :submit %>
   <% end %>
+</div>
+<div >
+  <% @activity.reviews.each do |review| %>
+    <p class="border rouded p-3" style="background-color: white"><%= review.rate  %></p>
+  <% end %>
+</div>
 </div>
 <div class="container">
   <div class="event-txt-show">
