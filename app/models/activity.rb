@@ -34,12 +34,6 @@ class Activity < ApplicationRecord
   has_many :reviews, dependent: :destroy
   validates :category, inclusion: { in: CATEGORIES.map {|c| c[:label] } }
 
-  # include PgSearch
-  # pg_search_scope :global_search,
-  #   against: [ :category, :name ],
-  #   using: {
-  #     tsearch: { prefix: true }
-  #   }
 
   def address
     [street, zipcode, city].compact.join(', ')
