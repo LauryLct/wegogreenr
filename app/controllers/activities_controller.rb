@@ -9,7 +9,7 @@ class ActivitiesController < ApplicationController
       {
         lat: activity.latitude,
         lng: activity.longitude,
-        image_url: helpers.asset_url('Logo3-simple-plein.png'),
+        image_url: helpers.asset_url("#{activity.category}.png"),
         infoWindow: render_to_string(partial: "infowindow", locals: { activity: activity })
       }
     end
@@ -19,7 +19,11 @@ class ActivitiesController < ApplicationController
     @message = Message.new
     # @message.activity_id = @activity[:id]
     # @message.user_id = current_user[:id]
+    session[:current_path] = activity_path(@activity)
     @messages = @activity.messages
+
+    @review= Review.new
+    @review.activity = @activity
   end
 
   def new
@@ -53,7 +57,7 @@ class ActivitiesController < ApplicationController
     end
 
     def activity_params
-      params.require(:activity).permit(:name, :photo, :description, :category, :street, :zipcode, :city, :starting_date, :ending_date,)
+      params.require(:activity).permit(:name, :photo, :description, :category, :street, :zipcode, :city, :starting_date, :ending_date, )
     end
   end
 

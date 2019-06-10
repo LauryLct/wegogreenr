@@ -67,7 +67,7 @@ puts "all users & profiles created"
 restaurant = Activity.create!(
  name: "Le cirque",
  description: "Ce café d'auberge de jeunesse propose une petite restauration à base de produits bio, locaux et équitables.",
- category: "restaurant Bio",
+ category: "Restaurant",
  street: "139 Rue des Postes",
  zipcode: "59000",
  city: "Lille",
@@ -78,7 +78,7 @@ restaurant = Activity.create!(
 epicerie = Activity.create!(
  name: "Robin des bios",
  description: "epicerie associative - Vrac et 100% Bio",
- category: "restaurant Bio",
+ category: "Alimentation",
  street: "23 Rue Gosselet",
  zipcode: "59000",
  city: "Lille",
@@ -99,8 +99,8 @@ atelier = Activity.create!(
 
 shop = Activity.create!(
   name: "el MARKET",
-  description: "Eco friendly shop ",
-  category: "Shopping",
+  description: "Shop eco-responsable",
+  category: "Shop",
   street: "128 Rue Léon Gambetta",
   zipcode: "59000",
   city: "Lille",
@@ -120,10 +120,10 @@ dechets = Activity.create!(
 )
 
 festival = Activity.create!(
-  name: "We Love Green Festival",
+  name: "We Love Green Festival Lambersart",
   description: "Une super programmation, une organisation eco-friendly",
   category: "Event",
-  city: "Arras",
+  city: "Lambersart",
   starting_date: "15/06/2019",
   ending_date: "16/06/2019",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737824/festival_udaurr.png",

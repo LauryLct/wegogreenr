@@ -2,6 +2,21 @@
   <%= cl_image_tag @activity.photo%>
 </div>
 
+<%= javascript_pack_tag 'application' %>
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <%= simple_form_for([@activity, @review], html: { class: "review_form" }) do |r| %>
+    <%= r.input :rate, class: "shadow-sm p-3 mb-5 bg-white rounded", value: 'Donnez une note', collection: [1, 2, 3, 4, 5 ] %>
+    <%= r.button :submit, class: "d-none" %>
+  <% end %>
+</div>
+<div >
+  <% @activity.reviews.each do |review| %>
+    <%= review.rate  %></p>
+<% end %>
+</div>
+</div>
+
+
 <div class="container">
   <div class="event-txt-show">
     <h1><strong><%= @activity.name %></strong></h1>
@@ -14,15 +29,12 @@
   </div>
   <!-- <div class="message-bloc overflow-auto">
     <% @messages.each do |message| %>
-      <% if message.user_id != current_user[:id] %>
+      <% if current_user && message.user_id != current_user[:id] %>
         <p><%= message.user.profile.first_name %></p>
         <p id="message"><%= message.content %></p>
       <% else %>
-
         <p class="text-mess"><%= message.user.profile.first_name %></p>
         <p class="text-mess" id="message-current-user"><%= message.content %></p>
-
-
       <% end  %>
     <% end %>
   </div> -->

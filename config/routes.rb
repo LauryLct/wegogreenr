@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   mount ActionCable.server => "/cable"
   resources :activities do
+    resources :reviews, only: [ :new, :create ]
     collection do
       get "event", to: "activities#event"
     end
