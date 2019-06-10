@@ -110,8 +110,10 @@ shop = Activity.create!(
 
 dechets = Activity.create!(
   name: "World clean up day",
-  description: "Ramassons les déchets dans nos quartiers ",
+  description: "Ramassons les déchets dans nos quartiers",
   category: "Event",
+  street: "Gare lille Flandres",
+  zipcode: "59000",
   city: "Lille",
   starting_date: "14/06/2019",
   ending_date: "14/06/2019",
@@ -123,6 +125,8 @@ festival = Activity.create!(
   name: "We Love Green Festival Lambersart",
   description: "Une super programmation, une organisation eco-friendly",
   category: "Event",
+  street: "12 avenue de verdun",
+  zipcode: "59130",
   city: "Lambersart",
   starting_date: "15/06/2019",
   ending_date: "16/06/2019",
@@ -131,12 +135,14 @@ festival = Activity.create!(
 )
 
 salon = Activity.create!(
-  name: "Salon du Zéro Dechet",
+  name: "La journée des Z’héros (déchet)",
   description: "Retrouvez les acteurs les plus actifs de la communauté Zero Waste France",
   category: "Event",
-  city: "Lille",
-  starting_date: "20/06/2019",
-  ending_date: "23/06/2019",
+  street: "58 rue kleber",
+  zipcode: "59110",
+  city: "La madeleine",
+  starting_date: "20/05/2020",
+  ending_date: "23/06/2020",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559738170/ZERO_DECHET_sk3n2d.jpg",
   user: stephane,
 )
