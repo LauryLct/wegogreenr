@@ -1,3 +1,6 @@
+.mapboxgl-map {
+}
+
 .mapboxgl-popup {
   max-width: 200px;
   position: relative;
@@ -6,11 +9,6 @@
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: "Open Sans", sans-serif;
-}
-
-.mapboxgl-ctrl-geocoder {
-  border-radius: 30px !important;
 }
 
 .mapboxgl-popup {
@@ -44,14 +42,14 @@
 }
 
 #gros_logo {
-  width: 180px;
-  margin-top: 10px;
-  margin-left: 10px;
+  width: 150px;
+  margin-top: 16px;
+  margin-left: 16px;
 }
 
 #fond {
-  width: 240px;
-  opacity: 0.6;
+  width: 220px;
+  // opacity: 0.9;
 }
 
 .mapboxgl-ctrl-top {
@@ -66,6 +64,12 @@
   font-style: italic;
 }
 
+
 .mapbox-description {
 
+}
+
+
+.mapboxgl-ctrl-geocoder {
+  border-radius: 30px !important;
 }

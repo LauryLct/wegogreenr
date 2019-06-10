@@ -1,27 +1,27 @@
-.event-pic-show{
-  img{
+.event-pic-show {
+  img {
     width: 100%;
     min-height: 40vh;
     max-height: 100vh;
   }
 }
 
-.event-txt-show{
-  h1{
+.event-txt-show {
+  h1 {
     margin-top: 10px;
     color: #044343;
     font-size: 26px;
   }
-  h2{
+  h2 {
     margin-top: 10px;
     color: #044343;
     font-size: 20px;
   }
 }
 
-#message{
+#message {
   background-color: white;
-  color: #0497BC;
+  color: #0497bc;
   width: fit-content;
   padding: 2px 12px;
   margin: 5px 5px;
@@ -29,24 +29,29 @@
   margin-right: 50px;
 }
 
-#message-current-user{
-  background-color: #0497BC;
-  color: white;
-  width: fit-content;
-  // display: inline-block;
-  width: auto;
-  padding: 2px 12px;
-  margin: 5px 5px;
-  border-radius: 50px;
-  margin-left: 50px;
+.owner {
+  align-self: flex-end;
+  text-align: right;
+  .message-body {
+    background-color: white;
+    color: #0497bc;
+    width: fit-content;
+    // display: inline-block;
+    width: auto;
+    padding: 2px 12px;
+    margin: 5px 5px;
+    border-radius: 50px;
+    margin-left: 50px;
+  }
 }
 
-.message-bloc{
-  p{
+.message {
+  align-self: flex-end;
+  p {
     margin: 0 10px;
   }
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   max-height: 80vh;
 }
 
@@ -59,11 +64,15 @@
   .form-control {
     height: 35px;
   }
-  .EdgeButton--secondary{
+  .EdgeButton--secondary {
     height: 35px;
     font-size: 16px;
     width: fit-content;
     margin-top: 0px;
     line-height: 0px;
   }
+}
+.message-infos-author {
+  margin-bottom: 0px;
+  padding: 5px 5px;
 }
