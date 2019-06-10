@@ -9,8 +9,7 @@ class Message < ApplicationRecord
   end
 
   def broadcast_message
-    ActionCable.server.broadcast("activity_#{self.activity.id}",
-    {
+    ActionCable.server.broadcast("activity_#{self.activity.id}", {
         type: 'message',
         data: {
           message: self,
