@@ -1,7 +1,6 @@
 <div class="event-pic-show">
   <%= cl_image_tag @activity.photo%>
 </div>
-
 <div class="container">
   <div class="event-txt-show">
     <h1><strong><%= @activity.name %></strong></h1>
@@ -11,9 +10,13 @@
       <% end %>
     </div>
     <div class = "d-flex star-rating justify-content-between">
-      <%= simple_form_for([@activity, @review], html: { class: "review_form" }) do |r| %>
-        <%= r.input :rate, class: "shadow-sm p-3 mb-5 bg-white rounded", label: false, collection: [1, 2, 3, 4, 5 ] %>
-        <%= r.button :submit, class: "d-none" %>
+      <% if @activity.reviews.pluck(:user_id).include?(current_user.id) %>
+        <%= "Vous avez déjà voté" %>
+      <% elsif %>
+        <%= simple_form_for([@activity, @review], html: { class: "review_form" }) do |r| %>
+          <%= r.input :rate, class: "shadow-sm p-3 mb-5 bg-white rounded", label: false, collection: [1, 2, 3, 4, 5 ] %>
+          <%= r.button :submit, class: "d-none" %>
+        <% end %>
       <% end %>
       <% if @activity.reviews.count == 0 %>
         <p class="avg-rate-display"><strong>Aucun avis pour le moment</strong></p>
