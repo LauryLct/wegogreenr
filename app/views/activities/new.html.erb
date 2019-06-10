@@ -22,9 +22,8 @@
           placeholder: "75000" %>
       <%= a.input :city, label: "Ville",
           placeholder: "Paris" %>
-      <%= a.input :starting_date,
-         label: "Date de début" %>
-      <%= a.input :ending_date, label: "Date de fin" %>
+      <%= a.input :starting_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= a.input :ending_date, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= a.input :photo %>
       <%= a.input :photo_cache, as: :hidden %>
       <center>
