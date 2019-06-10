@@ -10,7 +10,7 @@
     <%= simple_form_for @activity do |a| %>
       <%= a.input :category,
           label: "Que souhaitez-vous ajouter?",
-          collection: CATEGORIES.map {|c| c[:label] }%>
+          collection: Activity::CATEGORIES.map {|c| c[:label] }%>
       <%= a.input :name,
           label: "Nom",
           placeholder: "Entrez le nom du lieu ou de l'évènement" %>
