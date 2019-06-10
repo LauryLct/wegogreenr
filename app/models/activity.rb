@@ -33,7 +33,7 @@ class Activity < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :reviews, dependent: :destroy
   validates :category, inclusion: { in: CATEGORIES.map {|c| c[:label] } }
-
+  
   def address
     [street, zipcode, city].compact.join(', ')
   end
