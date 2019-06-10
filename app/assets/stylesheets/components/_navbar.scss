@@ -1,6 +1,6 @@
 .navbar-lewagon {
   position: fixed;
-  right: 20px;
+  right: 5px;
   top: 20px;
   justify-content: flex-end;
   background: transparent !important;
@@ -11,6 +11,7 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2) !important;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -24,6 +25,19 @@
   justify-content: center;
 }
 
-.navbar-toggler {
-  font-size: 16px;
+.navbar-lewagon .navbar-toggler {
+  font-size: 12px;
+  width: 34px !important;
+  color: #222222 !important;
+  background-color: #e4e4e4 !important;
+  background: #e4e4e4 !important;
+  padding-top: 0.1rem;
+  padding-right: 0.1rem;
+  padding-bottom: 0.1rem;
+  padding-left: 0.1rem;
+  margin-right: 0 !important;
+  button {
+    background-color: #e4e4e4 !important;
+    background: #e4e4e4 !important;
+  }
 }
