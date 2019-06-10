@@ -46,7 +46,6 @@ class Activity < ApplicationRecord
   end
 
 
-
   mount_uploader :photo, PhotoUploader
   after_validation :geocode
 end

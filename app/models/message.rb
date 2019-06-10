@@ -2,7 +2,6 @@ class Message < ApplicationRecord
   belongs_to :user
   belongs_to :activity
   validates :content, presence: true
-
   after_create :broadcast_message
 
   def from?(some_user)

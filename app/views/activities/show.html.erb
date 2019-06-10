@@ -2,79 +2,30 @@
   <%= cl_image_tag @activity.photo%>
 </div>
 
-<%= javascript_pack_tag 'application' %>
-<div class="shadow p-3 mb-5 bg-white rounded">
-  <%= simple_form_for([@activity, @review], html: { class: "review_form" }) do |r| %>
-    <%= r.input :rate, class: "shadow-sm p-3 mb-5 bg-white rounded", value: 'Donnez une note', collection: [1, 2, 3, 4, 5 ] %>
-    <%= r.button :submit, class: "d-none" %>
-  <% end %>
-</div>
-<div >
-  <% @activity.reviews.each do |review| %>
-    <%= review.rate %></p>
-<% end %>
-</div>
-</div>
-
-
 <div class="container">
   <div class="event-txt-show">
     <h1><strong><%= @activity.name %></strong></h1>
-    <p>lieu: <%= @activity.street %>, <%= @activity.city %>, <%= @activity.zipcode %></p>
-    <% if @activity.starting_date.blank? == false %>
-      <p>Du <%= @activity.starting_date.strftime("%d-%m-%Y") %> au <%= @activity.ending_date.strftime("%d-%m-%Y") %></p>
-    <% end %>
-    <h2><strong>description :</strong></h2>
+    <div class="avg-rate-display">
+      <% if @activity.starting_date.blank? == false %>
+        <p>Du <%= @activity.starting_date.strftime("%d-%m-%Y") %> au <%= @activity.ending_date.strftime("%d-%m-%Y") %></p>
+      <% end %>
+    </div>
+    <div class = "d-flex star-rating justify-content-between">
+      <%= simple_form_for([@activity, @review], html: { class: "review_form" }) do |r| %>
+        <%= r.input :rate, class: "shadow-sm p-3 mb-5 bg-white rounded", label: false, collection: [1, 2, 3, 4, 5 ] %>
+        <%= r.button :submit, class: "d-none" %>
+      <% end %>
+      <% if @activity.reviews.blank? == false %>
+        <p class="avg-rate-display"><strong><%= @activity.reviews.average(:rate).to_f.round(1) %><%= "/5" %></strong></p>
+      <% elsif %>
+        <p><strong><%= "-/5" %></strong></p>
+      <% end %>
+    </div>
+    <h2>Adresse: </h2>
+    <p><i><%= @activity.street %>, <%= @activity.zipcode %>, <%= @activity.city %>.</i></p>
+    <h2>Description:</h2>
     <p><%= @activity.description %></p>
   </div>
-  <!-- <div class="message-bloc overflow-auto">
-    <% @messages.each do |message| %>
-      <% if current_user && message.user_id != current_user[:id] %>
-        <p><%= message.user.profile.first_name %></p>
-        <p id="message"><%= message.content %></p>
-      <% else %>
-        <p class="text-mess"><%= message.user.profile.first_name %></p>
-        <p class="text-mess" id="message-current-user"><%= message.content %></p>
-      <% end  %>
-    <% end %>
-  </div> -->
   <%= render 'message_box', activity: @activity %>
   <%= render 'messages_send_form', activity: @activity %>
 </div>
-
-
-
-<% content_for :after_js do %>
- <script>
- function scrollLastMessageIntoView() {
-   const messages = document.querySelectorAll('.message');
-   const lastMessage = messages[messages.length - 1];
-   lastMessage.scrollIntoView();
- }
- // scrollLastMessageIntoView();
- App['activity_<%= @activity.id %>'] = App.cable.subscriptions.create({ channel: 'ActivitiesChannel',
- activity_id: <%= @activity.id %> },
-   { received: (data) => {
-     if (data.type === 'message') {
-     var messagesContainer = document.querySelector(".messages");
-     var user_present = <%= current_user ? true : false %>
-     messagesContainer.insertAdjacentHTML(
-       'beforeend',
-       `
-       <div class="message owner">
-         <div class="message-infos">
-           <p class="message-infos-author">${data.data.sender}</p>
-           <p class="message-infos-sent">${new Date(data.data.message.created_at).toLocaleTimeString()}</p>
-         </div>
-         <div class="message-body">
-           ${data.data.message.content}
-         </div>
-       </div>
-       `
-     );
-     scrollLastMessageIntoView();
-     }
-   }
-   })
- </script>
-<% end %>
