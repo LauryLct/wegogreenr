@@ -3,7 +3,6 @@ class MessagesController < ApplicationController
     @activity = Activity.find(params[:message][:activity_id])
     @message = Message.new(message_params)
     @message.user = current_user
-    @message.activity_id = @activity.id
 
     if @message.save
       respond_to do |format|
