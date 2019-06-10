@@ -13,6 +13,10 @@ def create
   end
 end
 
+# def show
+#   @review = @reviewable.reviews.user_reviews(current_user).first || Review.new
+# end
+
 private
 
   def review_params

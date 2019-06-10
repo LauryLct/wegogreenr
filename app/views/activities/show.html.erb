@@ -14,6 +14,7 @@
       <% elsif %>
         <p><strong><%= "-/5" %></strong></p>
       <% end %>
+      <p class="avg-rate-display"><strong><%= @activity.reviews.count %> avis</strong></p>
     </div>
     <h2>Adresse: </h2>
     <p><i><%= @activity.street %>, <%= @activity.zipcode %>, <%= @activity.city %>.</i></p>
