@@ -1,0 +1,24 @@
+<div id="create-message">
+ <% if current_user != nil %>
+   <%= simple_form_for @message, remote: true, id: "form_id_here" do |f| %>
+     <%= f.input :content, label: false %>
+     <input name="message[activity_id]" type="hidden" value="<%= @activity.id %>">
+     <%= f.button :submit, 'send', class: 'message-form-button'%>
+   <% end %>
+ <% else %>
+   <a id="message-form-signin" href="/users/sign_in">Sign in to chat</a>
+ <% end %>
+</div>
+<script>
+ document.getElementById("message_content").addEventListener("keypress", function(event) {
+   if (event.which == 13) {
+     console.log("enter pressed");
+       event.preventDefault();
+       document.querySelector(".message-form-button").click();
+     var messageInput = document.getElementById('message_content')
+     if (messageInput) {
+       messageInput.value = ""
+     }
+   }
+ });
+</script>

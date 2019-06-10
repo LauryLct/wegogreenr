@@ -29,24 +29,29 @@
   margin-right: 50px;
 }
 
-#message-current-user{
-  background-color: #0497BC;
-  color: white;
-  width: fit-content;
-  // display: inline-block;
-  width: auto;
-  padding: 2px 12px;
-  margin: 5px 5px;
-  border-radius: 50px;
-  margin-left: 50px;
+.owner{
+  align-self: flex-end;
+  text-align: right;
+  .message-body{
+    background-color: white;
+    color: #0497BC;
+    width: fit-content;
+    // display: inline-block;
+    width: auto;
+    padding: 2px 12px;
+    margin: 5px 5px;
+    border-radius: 50px;
+    margin-left: 50px;
+  }
 }
 
-.message-bloc{
+.message{
+  align-self: flex-end;
   p{
     margin: 0 10px;
   }
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   max-height: 80vh;
 }
 
@@ -66,4 +71,8 @@
     margin-top: 0px;
     line-height: 0px;
   }
+}
+.message-infos-author{
+  margin-bottom: 0px;
+  padding: 5px 5px
 }

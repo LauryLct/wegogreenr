@@ -1,6 +1,7 @@
 <div class="event-pic-show">
   <%= cl_image_tag @activity.photo%>
 </div>
+
 <%= javascript_pack_tag 'application' %>
 <div class="shadow p-3 mb-5 bg-white rounded">
   <%= simple_form_for([@activity, @review], html: { class: "review_form" }) do |r| %>
@@ -14,6 +15,8 @@
 <% end %>
 </div>
 </div>
+
+
 <div class="container">
   <div class="event-txt-show">
     <h1><strong><%= @activity.name %></strong></h1>
@@ -24,7 +27,7 @@
     <h2><strong>description :</strong></h2>
     <p><%= @activity.description %></p>
   </div>
-  <div class="message-bloc overflow-auto">
+  <!-- <div class="message-bloc overflow-auto">
     <% @messages.each do |message| %>
       <% if current_user && message.user_id != current_user[:id] %>
         <p><%= message.user.profile.first_name %></p>
@@ -34,8 +37,44 @@
         <p class="text-mess" id="message-current-user"><%= message.content %></p>
       <% end  %>
     <% end %>
-  </div>
-  <div class="Form-message">
-    <%= render "activities/components/form_messages", activity: @activity, message: @message %>
-  </div>
+  </div> -->
+  <%= render 'message_box', activity: @activity %>
+  <%= render 'messages_send_form', activity: @activity %>
 </div>
+
+
+
+<% content_for :after_js do %>
+ <script>
+ function scrollLastMessageIntoView() {
+   const messages = document.querySelectorAll('.message');
+   const lastMessage = messages[messages.length - 1];
+   lastMessage.scrollIntoView();
+ }
+ // scrollLastMessageIntoView();
+ App['activity_<%= @activity.id %>'] = App.cable.subscriptions.create({ channel: 'ActivitiesChannel',
+ activity_id: <%= @activity.id %> },
+   { received: (data) => {
+     if (data.type === 'message') {
+     var messagesContainer = document.querySelector(".messages");
+     var user_present = <%= current_user ? true : false %>
+     messagesContainer.insertAdjacentHTML(
+       'beforeend',
+       `
+       <div class="message owner">
+         <div class="message-infos">
+           <p class="message-infos-author">${data.data.sender}</p>
+           <p class="message-infos-sent">${new Date(data.data.message.created_at).toLocaleTimeString()}</p>
+         </div>
+         <div class="message-body">
+           ${data.data.message.content}
+         </div>
+       </div>
+       `
+     );
+     scrollLastMessageIntoView();
+     }
+   }
+   })
+ </script>
+<% end %>
