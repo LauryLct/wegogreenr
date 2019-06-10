@@ -69,7 +69,18 @@
 
 }
 
+.mapboxgl-ctrl {
+  margin-right: 20px !important;
+}
 
 .mapboxgl-ctrl-geocoder {
   border-radius: 30px !important;
+  color: #e4e4e4 !important;
+  background-color: $our-green !important;
 }
+
+.mapboxgl-ctrl-geocoder--icon-search {
+  fill: #e4e4e4 !important;
+}
+
+
