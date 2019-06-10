@@ -5,3 +5,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 initMapbox();
 import { initStarRating } from '../plugins/init_star_rating';
 initStarRating();
+
+
+import "../plugins/flatpickr"
