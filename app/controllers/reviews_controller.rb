@@ -18,4 +18,4 @@ private
   def review_params
     params.require(:review).permit(:rate)
   end
-end 
+end
