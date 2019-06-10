@@ -1,13 +1,13 @@
 <div class="container new-activity">
   <div class="form-img-bckg"><%= image_tag "Logo3.png" %></div>
-  <div class="create-activity-form">
-    <br>
-    <br>
-    <br>
-    <center>
-      <h1> A vous de partager!</h1>
-    </center>
-    <%= simple_form_for @activity do |a| %>
+  <br>
+  <br>
+  <br>
+  <center>
+    <h1> A vous de partager!</h1>
+  </center>
+  <div class="create-activity-form" >
+    <%= simple_form_for @activity, class: "m-" do |a| %>
       <%= a.input :category,
           label: "Que souhaitez-vous ajouter?",
           collection: Activity::CATEGORIES.map {|c| c[:label] }%>
