@@ -15,10 +15,15 @@
         <%= r.input :rate, class: "shadow-sm p-3 mb-5 bg-white rounded", label: false, collection: [1, 2, 3, 4, 5 ] %>
         <%= r.button :submit, class: "d-none" %>
       <% end %>
+      <% if @activity.reviews.count == 0 %>
+        <p class="avg-rate-display"><strong>Aucun avis pour le moment</strong></p>
+      <% elsif %>
+        <p class="avg-rate-display"><strong><%= @activity.reviews.count %> avis</strong></p>
+      <% end %>
       <% if @activity.reviews.blank? == false %>
         <p class="avg-rate-display"><strong><%= @activity.reviews.average(:rate).to_f.round(1) %><%= "/5" %></strong></p>
       <% elsif %>
-        <p><strong><%= "-/5" %></strong></p>
+        <p class="avg-rate-display"><strong><%= "-/5" %></strong></p>
       <% end %>
     </div>
     <h2>Adresse: </h2>
