@@ -17,10 +17,14 @@
       <li class="nav-item">
         <%= link_to "L'agenda", event_activities_path, class: "dropdown-item" %>
       </li>
+      <li class="nav-item">
+        <%= link_to "Qui sommes-nous?", root_path(anchor: "values"), class: "dropdown-item" %>
+      </li>
       <% if current_user %>
         <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       <% else %>
-        <%= link_to "Se connecter", new_user_session_path, class: "dropdown-item" %>
+        <%= link_to "Je me connecte", new_user_session_path, class: "dropdown-item" %>
+        <%= link_to "Je m'enregistre", new_user_registration_path, class: "dropdown-item" %>
       <% end %>
       <li class="nav-item">
       </li>
