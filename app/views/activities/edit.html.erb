@@ -1,2 +1,49 @@
-<h1>Activities#edit</h1>
-<p>Find me in app/views/activities/edit.html.erb</p>
+<div class="container new-activity">
+  <div class="form-img-bckg"><%= image_tag "Logo3.png" %></div>
+  <br>
+  <br>
+  <br>
+  <center>
+    <h1> Modifiez les informations sur cette activité!</h1>
+  </center>
+  <div class="create-activity-form" >
+    <%= simple_form_for @activity, class: "m-" do |a| %>
+      <%= a.input :category,
+          label: "Que souhaitez-vous ajouter?",
+          collection: Activity::CATEGORIES.map {|c| c[:label] }%>
+      <%= a.input :name,
+          label: "Nom",
+          placeholder: "Entrez le nom du lieu ou de l'évènement" %>
+      <%= a.input :description, label: "Une petite description",
+          placeholder: "Faites nous réver!" %>
+      <%= a.input :street, label: "Rue",
+          placeholder: "1, rue de la bonne humeur" %>
+      <%= a.input :zipcode, label: "Code postal",
+          placeholder: "75000" %>
+      <%= a.input :city, label: "Ville",
+          placeholder: "Paris" %>
+      <div id="date-details">
+        <%= a.input :starting_date, label: "Date de début", as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= a.input :ending_date, label: "Date de fin", as: :string, required: false, input_html: {class: "datepicker"} %>
+      </div>
+      <%= a.input :photo %>
+      <%= a.input :photo_cache, as: :hidden %>
+      <center>
+        <%= a.button :submit, "Je partage !", class: "EdgeButton--primary" %>
+      </center>
+    <% end %>
+  </div>
+</div>
+<script>
+  const category = document.querySelector('#activity_category');
+  const hiddenpart = document.querySelector('#date-details');
+  hiddenpart.setAttribute('hidden', true);
+  category.addEventListener("change", (event) => {
+    console.log(event.currentTarget.value);
+    if (event.currentTarget.value === 'Event') {
+      hiddenpart.removeAttribute('hidden');
+    } else {
+      hiddenpart.setAttribute('hidden', true);
+    }
+  });
+</script>
