@@ -19,41 +19,47 @@
   }
 }
 
-#message {
-  background-color: white;
-  color: #0497bc;
-  width: fit-content;
-  padding: 2px 12px;
-  margin: 5px 5px;
-  border-radius: 50px;
-  margin-right: 50px;
+.messages {
+  overflow: auto;
+  height: 50vh;
+  margin-bottom: 10px;
+}
+
+.message {
+  max-height: 80vh;
+  .message-body{
+    border: 1px solid #0497bc;
+    background-color: white;
+    color: #0497bc;
+    // width: fit-content;
+    display: inline-block;
+    width: auto;
+    padding: 2px 12px;
+    margin: 0px 5px;
+    border-radius: 50px;
+    margin-right: 50px;
+  }
+  p {
+    margin: 0 10px;
+  }
 }
 
 .owner {
   align-self: flex-end;
   text-align: right;
   .message-body {
-    background-color: white;
-    color: #0497bc;
+    background-color: #0497bc;
+    color: white;
     width: fit-content;
     // display: inline-block;
     width: auto;
     padding: 2px 12px;
-    margin: 5px 5px;
+    margin: 0px 5px;
     border-radius: 50px;
     margin-left: 50px;
   }
 }
 
-.message {
-  align-self: flex-end;
-  p {
-    margin: 0 10px;
-  }
-  display: flex;
-  // flex-direction: column;
-  max-height: 80vh;
-}
 
 .text-mess {
   align-self: flex-end;
@@ -80,3 +86,15 @@
 .avg-rate-display {
   color: #044343;
 }
+
+// #create-message{
+//   text-align:center;
+//   #new_message{
+//     position: fixed;
+//     left: 0;
+//     bottom: 0;
+//     width: 100%;
+//     color: white;
+//     text-align: center;
+//   }
+//}
