@@ -1,36 +1,28 @@
 <div class="event-pic-show">
   <%= cl_image_tag @activity.photo%>
 </div>
-
-<%= javascript_pack_tag 'application' %>
-<div class="shadow p-3 mb-5 bg-white rounded">
-  <%= simple_form_for([@activity, @review], html: { class: "review_form" }) do |r| %>
-    <%= r.input :rate, class: "shadow-sm p-3 mb-5 bg-white rounded", value: 'Donnez une note', collection: [1, 2, 3, 4, 5 ] %>
-    <%= r.button :submit, class: "d-none" %>
-  <% end %>
-</div>
-<div >
-  <% @activity.reviews.each do |review| %>
-    <%= review.rate  %></p>
-<% end %>
-</div>
-</div>
-
-
 <div class="container">
   <div class="event-txt-show">
     <h1><strong><%= @activity.name %></strong></h1>
-    <p>lieu: <%= @activity.street %>, <%= @activity.city %>, <%= @activity.zipcode %></p>
+    <div class = "d-flex star-rating justify-content-between">
+      <%= simple_form_for([@activity, @review], html: { class: "review_form" }) do |r| %>
+        <%= r.input :rate, class: "shadow-sm p-3 mb-5 bg-white rounded", label: false, collection: [1, 2, 3, 4, 5 ] %>
+        <%= r.button :submit, class: "d-none" %>
+      <% end %>
+      <% if @activity.reviews.blank? == false %>
+        <p class="avg-rate-display"><strong><%= @activity.reviews.average(:rate).to_f.round(1) %><%= "/5" %></strong></p>
+      <% elsif %>
+        <p><strong><%= "-/5" %></strong></p>
+      <% end %>
+    </div>
+    <h2>Adresse: </h2>
+    <p><i><%= @activity.street %>, <%= @activity.zipcode %>, <%= @activity.city %>.</i></p>
     <% if @activity.starting_date.blank? == false %>
       <p>Du <%= @activity.starting_date.strftime("%d-%m-%Y") %> au <%= @activity.ending_date.strftime("%d-%m-%Y") %></p>
     <% end %>
-    <h2><strong>description :</strong></h2>
+    <h2>Description:</h2>
     <p><%= @activity.description %></p>
   </div>
   <%= render 'message_box', activity: @activity %>
   <%= render 'messages_send_form', activity: @activity %>
 </div>
-
-
-
-
