@@ -1,9 +1,12 @@
 <div class="event-pic-show">
-  <%= cl_image_tag @activity.photo%>
+  <%= cl_image_tag @activity.photo %>
 </div>
 <div class="container">
   <div class="event-txt-show">
-    <h1><strong><%= @activity.name %></strong></h1>
+    <h1><strong><%= @activity.name %></strong> - <%= link_to edit_activity_path(@activity) do  %>
+        <i class="far fa-edit"></i>
+        <% end %>
+     </h1>
     <div class="avg-rate-display">
       <% if @activity.starting_date.blank? == false %>
         <p>Du <%= @activity.starting_date.strftime("%d-%m-%Y") %> au <%= @activity.ending_date.strftime("%d-%m-%Y") %></p>

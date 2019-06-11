@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index, :event, :show]
-  before_action :set_activity, only: [:show]
+  before_action :set_activity, only: [:show, :edit, :update]
 
   def index
     @activities = Activity.where.not(latitude: nil, longitude: nil)
@@ -43,6 +43,12 @@ class ActivitiesController < ApplicationController
   end
 
   def update
+    @activity.update(activity_params)
+    if @activity.save
+      redirect_to activity_path(@activity)
+    else
+      render :edit
+    end
   end
 
   def event
@@ -51,12 +57,11 @@ class ActivitiesController < ApplicationController
 
   private
 
-    def set_activity
-      @activity = Activity.find(params[:id])
-    end
-
-    def activity_params
-      params.require(:activity).permit(:name, :photo, :description, :category, :street, :zipcode, :city, :starting_date, :ending_date, )
-    end
+  def set_activity
+    @activity = Activity.find(params[:id])
   end
 
+  def activity_params
+    params.require(:activity).permit(:name, :photo, :description, :category, :street, :zipcode, :city, :starting_date, :ending_date)
+  end
+end
