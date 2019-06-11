@@ -1,2 +1,22 @@
-<h1>Profiles#new</h1>
-<p>Find me in app/views/profiles/new.html.erb</p>
+<div class="container sign-bkg">
+  <div class="row justify-content-center">
+    <div class="form-img-bckg">
+      <%= image_tag "Logo3.png" %>
+    </div>
+    <div class="col-8 col-lg-6">
+      <div class="form-sign">
+        <h2>J'enrichis mon profil</h2>
+        <%= simple_form_for @profile do |f| %>
+          <%= f.input :nickname %>
+          <%= f.input :first_name, prompt: "Prénom" %>
+          <%= f.input :last_name, label: "Nom" %>
+          <%= f.input :gender, as: :radio_buttons, collection: [['0', 'female'], ['1', 'male']], label_method: :second, value_method: :first %>
+          <%= f.input :age, collection: 18..200  %>
+          <%= f.input :description %>
+          <%= f.input :photo %>
+          <%= f.button :submit, "Let's go GreenR", class: "EdgeButton--primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
