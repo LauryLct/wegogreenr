@@ -6,6 +6,7 @@ initMapbox();
 import { initStarRating } from '../plugins/init_star_rating';
 initStarRating();
 
+import "../plugins/heart"
 
 import "../plugins/flatpickr"
 
