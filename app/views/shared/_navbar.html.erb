@@ -7,20 +7,26 @@
       <li class="nav-item">
         <% if current_user && current_user.profile && current_user.profile.photo %>
           <%= cl_image_tag current_user.profile.photo, class: "avatar-bordered", id: "navbarDropdown" %>
-        <% else %>
         <% end %>
+      </li>
+      <li class="nav-item">
         <%= link_to "Je recherche", activities_path, class: "dropdown-item" %>
       </li>
       <li class="nav-item">
         <%= link_to "J'ajoute", new_activity_path, class: "dropdown-item" %>
       </li>
       <li class="nav-item">
-        <%= link_to "L'agenda", event_activities_path, class: "dropdown-item" %>
+        <%= link_to "Agenda des events", event_activities_path, class: "dropdown-item" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Qui sommes-nous?", root_path(anchor: "values"), class: "dropdown-item" %>
       </li>
       <% if current_user %>
+        <%= link_to "Mon profil", edit_profile_path(current_user), class: "dropdown-item" %>
         <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       <% else %>
-        <%= link_to "Se connecter", new_user_session_path, class: "dropdown-item" %>
+        <%= link_to "Je me connecte", new_user_session_path, class: "dropdown-item" %>
+        <%= link_to "Je m'enregistre", new_user_registration_path, class: "dropdown-item" %>
       <% end %>
       <li class="nav-item">
       </li>

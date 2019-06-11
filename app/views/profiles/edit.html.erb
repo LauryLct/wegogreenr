@@ -1,2 +1,23 @@
-<h1>Profiles#edit</h1>
-<p>Find me in app/views/profiles/edit.html.erb</p>
+<div class="container sign">
+  <div class="form-img"><%= image_tag "Logo3.png" %></div>
+  <br>
+  <br>
+  <br>
+  <center>
+    <h1>J'enrichis mon profil</h1>
+  <br>
+  <br>
+  <div class="form-sign">
+    <%= simple_form_for @profile do |f| %>
+      <%= f.input :nickname, label: "Nom d'utilisateur" %>
+      <%= f.input :first_name, label: "Prénom" %>
+      <%= f.input :last_name, label: "Nom" %>
+      <%= f.input :age %>
+      <%= f.input :description %>
+      <%= f.input :photo %>
+      <%= f.button :submit, "Let's go GreenR", class: "EdgeButton--primary" %>
+      <br>
+      <br>
+    <% end %>
+  </div>
+</div>

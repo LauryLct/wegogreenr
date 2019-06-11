@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     end
   end
   resources :messages, only: [:create]
+  
+  resources :profiles, only: [:new, :create, :edit, :update]
 
   devise_for :users
   root to: 'pages#home'

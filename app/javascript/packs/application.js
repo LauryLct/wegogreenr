@@ -8,3 +8,4 @@ initStarRating();
 
 
 import "../plugins/flatpickr"
+
