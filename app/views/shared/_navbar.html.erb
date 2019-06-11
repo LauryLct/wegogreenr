@@ -7,8 +7,9 @@
       <li class="nav-item">
         <% if current_user && current_user.profile && current_user.profile.photo %>
           <%= cl_image_tag current_user.profile.photo, class: "avatar-bordered", id: "navbarDropdown" %>
-        <% else %>
         <% end %>
+      </li>
+      <li class="nav-item">
         <%= link_to "Je recherche", activities_path, class: "dropdown-item" %>
       </li>
       <li class="nav-item">
