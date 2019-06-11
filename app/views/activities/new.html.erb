@@ -14,9 +14,9 @@
           collection: Activity::CATEGORIES.map {|c| c[:label] }%>
       <%= a.input :name,
           label: "Nom",
-          placeholder: "Entrez le nom du lieu ou de l'évènement" %>
+          placeholder: "Nom du lieu ou de l'event" %>
       <%= a.input :description, label: "Une petite description",
-          placeholder: "Faites nous réver!" %>
+          placeholder: "Faites nous réver..." %>
       <%= a.input :street, label: "Rue",
           placeholder: "1, rue de la bonne humeur" %>
       <%= a.input :zipcode, label: "Code postal",
