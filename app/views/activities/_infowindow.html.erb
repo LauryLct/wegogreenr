@@ -2,13 +2,8 @@
   <%= link_to activity_path(activity), class: "activity-link-show" do %>
     <%= cl_image_tag(activity.photo, height: 100, width: 200, crop: :fill,) %>
     <div class="mapbox-title">
-        <% if activity.reviews.blank? == false %>
-        <p class="avg-rate-display"><strong><%= activity.reviews.average(:rate).to_f.round(1) %><%= "/5" %></strong></p>
-      <% elsif %>
-        <p><strong><%= "-/5" %></strong></p>
-      <% end %>
       <h5><%= activity.name %></h5>
-    </div>
+        <%= render 'shared/stars', activity: activity %>
     <div class="mapbox-address">
       <p><%= activity.address %></p>
     </div>
@@ -17,4 +12,5 @@
     </div>
   <% end %>
 </div>
+
 

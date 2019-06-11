@@ -1,1 +1,15 @@
-
+<span class="rating_stars">
+  <% if activity.reviews.count > 0 %>
+    <% activity.reviews.average(:rate).round.times do %>
+      <span class="fas fa-star" ></span>
+    <% end %>
+    <% (5 - activity.reviews.average(:rate).round).times do %>
+      <span class="far fa-star" ></span>
+    <% end %>
+    <span> (<%= activity.reviews.count %>)</span>
+  <% else %>
+    <% 5.times do %>
+      <span class="far fa-star" ></span>
+    <%end%>
+  <%end%>
+</span>
