@@ -12,26 +12,22 @@
     <%= image_tag "Logo3.png", id: "gros_logo", class: "mapboxgl-ctrl-top-left" %>
   </div>
   <div class='calculation-box'>
-    <button><i class="fas fa-shopping-basket activity_filter", id="Event"></i></button>
-    <button><i class="fas fa-shopping-basket activity_filter", id="Alimentation"></i></button>
-    <button><i class="fas fa-shopping-basket activity_filter", id="DIY"></i></button>
-    <button><i class="fas fa-shopping-basket activity_filter", id="Restaurant"></i></button>
-    <button><i class="fas fa-shopping-basket activity_filter", id="Shop"></i></button>
-    <button><i class="fas fa-shopping-basket activity_filter", id="all"></i></button>
+    <button> <%= image_tag "Event-n", class: "activity_filter", id: "Event" %></button>
+    <button> <%= image_tag "Alimentation-n", class: "activity_filter", id: "Alimentation" %></button>
+    <button> <%= image_tag "DIY-n", class: "activity_filter", id: "DIY" %></button>
+    <button> <%= image_tag "Restaurant-n", class: "activity_filter", id: "Restaurant" %></button>
+    <button> <%= image_tag "Shop-n", class: "activity_filter", id: "Shop" %></button>
+    <button> <%= image_tag "Logo3-simple-plein", class: "activity_filter", id: "all" %></button>
   </div>
 </div>
 
 <script>
-  var classEvent = document.querySelector('.marker Event')
-
   var allIcons = document.querySelectorAll('.activity_filter');
 
   allIcons.forEach( (icon) => {
     icon.addEventListener('click', function(event) {
-      console.log(event.target.id);
       var elementSelect = document.querySelectorAll(`.marker.${event.target.id}`);
       var all = document.querySelectorAll('.marker');
-      console.log(all);
           if (event.target.id === 'all') {
             all.forEach((element) => {
               element.style.visibility = 'visible'
@@ -46,6 +42,5 @@
           }
     });
   });
-
 </script>
 
