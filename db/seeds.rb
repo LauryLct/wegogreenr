@@ -77,6 +77,7 @@ restaurant = Activity.create!(
  city: "Lille",
  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737826/le_cirque_ykjjw7.jpg",
  user: marie,
+ url: "https://fr-fr.facebook.com/lecirque.lille/",
 )
 
 epicerie = Activity.create!(
@@ -88,6 +89,7 @@ epicerie = Activity.create!(
  city: "Lille",
  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559738018/Robin_des_bio_qpxnlq.jpg",
  user: marie,
+ url: "https://www.robindesbio.org/",
 )
 
 atelier = Activity.create!(
@@ -99,6 +101,7 @@ atelier = Activity.create!(
   city: "Lille",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737812/atelier_lkjzep.jpg",
   user: daniel,
+  url:"https://mademoiselle-biloba.fr/",
 )
 
 shop = Activity.create!(
@@ -110,6 +113,7 @@ shop = Activity.create!(
   city: "Lille",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737819/elmarket_aztxhp.png",
   user: stephane,
+  url: "https://www.elmarket.fr/",
 )
 
 dechets = Activity.create!(
@@ -123,10 +127,11 @@ dechets = Activity.create!(
   ending_date: "14/06/2019",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737829/worldcleanup_m5h0ln.png",
   user: laury,
+  url: "https://www.worldcleanupday.fr/",
 )
 
 festival = Activity.create!(
-  name: "We Love Green Festival Lambersart",
+  name: "We Love Green Festival",
   description: "Une super programmation, une organisation eco-friendly",
   category: "Event",
   street: "12 avenue de verdun",
@@ -136,6 +141,7 @@ festival = Activity.create!(
   ending_date: "16/06/2019",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737824/festival_udaurr.png",
   user: marie,
+  url: "https://www.welovegreen.fr/",
 )
 
 salon = Activity.create!(
@@ -149,5 +155,6 @@ salon = Activity.create!(
   ending_date: "23/06/2020",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559738170/ZERO_DECHET_sk3n2d.jpg",
   user: stephane,
+  url: "https://www.facebook.com/events/salle-andr%C3%A9-malraux-lambersart/la-journ%C3%A9e-des-zh%C3%A9ros-/791997334517444/",
 )
 puts "all activities created"

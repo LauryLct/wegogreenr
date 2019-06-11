@@ -20,6 +20,8 @@ gem 'carrierwave', '~> 1.2'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'geocoder'
 gem 'pg_search'
+gem 'rest-client'
+
 
 
 group :development do
