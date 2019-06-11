@@ -1,3 +1,5 @@
+require "json"
+require "rest-client"
 require_relative 'boot'
 
 require 'rails/all'
