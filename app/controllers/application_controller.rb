@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   private
 
   def check_profile!
-    flash.now[:alert] = "Veuillez renseigner un pseudo pour continuer"
     redirect_to new_profile_path unless current_user.profile.present? 
+    # flash[:alert] = "Veuillez renseigner un pseudo pour continuer" if current_user.profile.present?
   end
 end

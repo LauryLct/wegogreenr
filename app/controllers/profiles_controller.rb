@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
     @profile.user = current_user
     if @profile.save
       redirect_to root_path
-      flash[:success] = "Profil mis à jour"
+      flash[:notice] = "Profil mis à jour"
     else
       render :new
       flash.now[:alert] = "Une erreur est survenue"
@@ -19,17 +19,18 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile.user = current_user
+    @user = current_user
+    @profile = @user.profile
   end
   
   def update
     @profile.user = current_user
     if @profile.update(profile_params)
       redirect_to root_path
-      flash[:alert] = "Profil mis à jour"
+      flash[:notice] = "Profil mis à jour"
     else
       render :edit
-      flash[:alert].now = "Une erreur est survenue"
+      flash.now[:alert] = "Une erreur est survenue"
     end
   end
   

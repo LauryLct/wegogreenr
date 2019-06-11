@@ -10,8 +10,7 @@
           <%= f.input :nickname %>
           <%= f.input :first_name, prompt: "Prénom" %>
           <%= f.input :last_name, label: "Nom" %>
-          <%= f.input :gender, as: :radio_buttons, collection: [['0', 'female'], ['1', 'male']], label_method: :second, value_method: :first %>
-          <%= f.input :age, collection: 18..200  %>
+          <%= f.input :age %>
           <%= f.input :description %>
           <%= f.input :photo %>
           <%= f.button :submit, "Let's go GreenR", class: "EdgeButton--primary" %>
