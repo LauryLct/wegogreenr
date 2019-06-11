@@ -8,8 +8,43 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   >
     <%= image_tag "Truc_arrondi.png", id: "fond", class: "mapboxgl-ctrl-top-left" %>
-    <%= link_to "#" do %>
-      <%= image_tag "Logo3.png", id: "gros_logo", class: "mapboxgl-ctrl-top-left" %>
-    <% end %>
+    <%= image_tag "Logo3.png", id: "gros_logo", class: "mapboxgl-ctrl-top-left" %>
+  </div>
+  <div class='calculation-box'>
+    <button><i class="fas fa-shopping-basket activity_filter", id="Event"></i></button>
+    <button><i class="fas fa-shopping-basket activity_filter", id="Alimentation"></i></button>
+    <button><i class="fas fa-shopping-basket activity_filter", id="DIY"></i></button>
+    <button><i class="fas fa-shopping-basket activity_filter", id="Restaurant"></i></button>
+    <button><i class="fas fa-shopping-basket activity_filter", id="Shop"></i></button>
+    <button><i class="fas fa-shopping-basket activity_filter", id="all"></i></button>
   </div>
 </div>
+
+<script>
+  var classEvent = document.querySelector('.marker Event')
+
+  var allIcons = document.querySelectorAll('.activity_filter');
+
+  allIcons.forEach( (icon) => {
+    icon.addEventListener('click', function(event) {
+      console.log(event.target.id);
+      var elementSelect = document.querySelectorAll(`.marker.${event.target.id}`);
+      var all = document.querySelectorAll('.marker');
+      console.log(all);
+          if (event.target.id === 'all') {
+            all.forEach((element) => {
+              element.style.visibility = 'visible'
+            })
+          } else {
+            all.forEach((element) => {
+              element.style.visibility = 'hidden'
+            })
+            elementSelect.forEach((element) => {
+              element.style.visibility = 'visible'
+            })
+          }
+    });
+  });
+
+</script>
+
