@@ -22,7 +22,7 @@ const initMapbox = () => {
 
       // Create a HTML element for your custom marker
       const element = document.createElement('div');
-      element.className = 'marker';
+      element.className = `marker ${marker.activity}`;
       element.style.backgroundImage = `url('${marker.image_url}')`;
       element.style.backgroundSize = 'contain';
       element.style.width = '40px';
