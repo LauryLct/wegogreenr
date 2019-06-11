@@ -21,6 +21,7 @@ Profile.create!(
   last_name: "Feline",
   remote_photo_url: "https://avatars3.githubusercontent.com/u/45879795?s=460&v=4",
   age: 44,
+  nickname: "Fizzy Shrimp",
   user: daniel,
 )
 
@@ -35,6 +36,7 @@ Profile.create!(
   last_name: "Lecaut",
   remote_photo_url: "https://avatars3.githubusercontent.com/u/32016201?s=460&v=4",
   age: 32,
+  nickname: "GreenDevOfTheWorldAndUniverse",
   user: laury,
 )
 
@@ -46,6 +48,7 @@ Profile.create!(
   first_name: "Stephane",
   last_name: "Vincent",
   remote_photo_url: "https://avatars1.githubusercontent.com/u/49432207?s=400&u=1756ce57a7fe5c8797ce7ff831587da1868714f7&v=4",
+  nickname: "The Dictator",
   age: 36,
   user: stephane,
 )
@@ -58,6 +61,7 @@ Profile.create!(
   first_name:  "Marie",
   last_name: "Vincent",
   remote_photo_url: "https://avatars2.githubusercontent.com/u/49431430?s=460&v=4",
+  nickname: "Marie-Pierre V",
   age: 32,
   user: marie,
 )
