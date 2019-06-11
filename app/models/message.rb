@@ -13,7 +13,7 @@ class Message < ApplicationRecord
         type: 'message',
         data: {
           message: self,
-          sender: self.user.profile.first_name
+          sender: self.user.profile.nickname
         }
     })
   end

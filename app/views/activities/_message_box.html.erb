@@ -2,7 +2,7 @@
   <% @activity.messages.each do |message| %>
     <div class="message <%= current_user && (current_user.id == message.user.id) ? "owner" : '' %>">
       <div class="message-infos">
-        <p class="message-infos-author"><%= message.user.profile.first_name %></p>
+        <p class="message-infos-author"><%= message.user.profile.nickname %></p>
       </div>
       <div class="message-body">
         <%= message.content %>

@@ -21,13 +21,13 @@
 
 .messages {
   overflow: auto;
-  height: 50vh;
+  max-height: 50vh;
   margin-bottom: 10px;
 }
 
 .message {
   max-height: 80vh;
-  .message-body{
+  .message-body {
     border: 1px solid #0497bc;
     background-color: white;
     color: #0497bc;
@@ -60,7 +60,6 @@
   }
 }
 
-
 .text-mess {
   align-self: flex-end;
 }
@@ -86,15 +85,3 @@
 .avg-rate-display {
   color: #044343;
 }
-
-// #create-message{
-//   text-align:center;
-//   #new_message{
-//     position: fixed;
-//     left: 0;
-//     bottom: 0;
-//     width: 100%;
-//     color: white;
-//     text-align: center;
-//   }
-//}
