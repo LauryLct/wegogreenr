@@ -1,49 +1,47 @@
 <div class="messages">
- <% @activity.messages.each do |message| %>
-   <div class="message <%= current_user && (current_user.id == message.user.id) ? "owner" : '' %>">
-    <div class="message-infos">
-      <p class="message-infos-author"><%= message.user.profile.first_name %></p>
+  <% @activity.messages.each do |message| %>
+    <div class="message <%= current_user && (current_user.id == message.user.id) ? "owner" : '' %>">
+      <div class="message-infos">
+        <p class="message-infos-author"><%= message.user.profile.first_name %></p>
+      </div>
+      <div class="message-body">
+        <%= message.content %>
+      </div>
     </div>
-    <div class="message-body">
-      <%= message.content %>
-    </div>
-   </div>
- <% end %>
+  <% end %>
 </div>
-
 <% content_for :after_js do %>
-
- <script>
-  function scrollLastMessageIntoView() {
-    const messages = document.querySelectorAll('.message');
-    const lastMessage = messages[messages.length - 1];
-    lastMessage.scrollIntoView();
-  }
-
-  console.log('should be here');
-  App['activity_<%= @activity.id %>'] = App.cable.subscriptions.create({ channel: 'ActivityChannel',
-  activity_id: <%= @activity.id %> },
-    { received: (data) => {
-      console.log(data)
-      if (data.type === 'message') {
-      const messagesContainer = document.querySelector(".messages");
-      const currentUserId = <%= current_user.id %>
-
-      messagesContainer.insertAdjacentHTML('beforeend',
-       `
-        <div class="message ${data.data.message.user_id === currentUserId ? 'owner' : ''}">
-           <div class="message-infos">
-             <p class="message-infos-author">${data.data.sender}</p>
-           </div>
-           <div class="message-body">
-             ${data.data.message.content}
-           </div>
-         </div>
-        `
-      );
-      scrollLastMessageIntoView();
-      }
+  <script>
+    function scrollLastMessageIntoView() {
+      const messages = document.querySelectorAll('.message');
+      const lastMessage = messages[messages.length - 1];
+      lastMessage.scrollIntoView();
     }
-    })
- </script>
+    
+    console.log('should be here');
+    App['activity_<%= @activity.id %>'] = App.cable.subscriptions.create({ channel: 'ActivityChannel',
+    activity_id: <%= @activity.id %> },
+      { received: (data) => {
+        console.log(data)
+        if (data.type === 'message') {
+        const messagesContainer = document.querySelector(".messages");
+        const currentUserId = <%= current_user.nil? ? '' : current_user.id %>
+    
+        messagesContainer.insertAdjacentHTML('beforeend',
+         `
+          <div class="message ${data.data.message.user_id === currentUserId ? 'owner' : ''}">
+             <div class="message-infos">
+               <p class="message-infos-author">${data.data.sender}</p>
+             </div>
+             <div class="message-body">
+               ${data.data.message.content}
+             </div>
+           </div>
+          `
+        );
+        scrollLastMessageIntoView();
+        }
+      }
+      })
+  </script>
 <% end %>
