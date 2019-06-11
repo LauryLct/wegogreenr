@@ -33,15 +33,6 @@ ActiveRecord::Schema.define(version: 2019_06_10_133335) do
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
-  create_table "hearts", force: :cascade do |t|
-    t.bigint "post_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_hearts_on_post_id"
-    t.index ["user_id"], name: "index_hearts_on_user_id"
-  end
-
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id"
