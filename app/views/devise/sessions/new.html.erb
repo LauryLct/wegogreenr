@@ -21,7 +21,9 @@
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
       <%= f.input :remember_me, label: "Se souvenir de moi", as: :boolean if devise_mapping.rememberable? %>
-      <%= f.button :submit, "Let's go GreenR", class: "EdgeButton--primary" %>
+      <center>
+        <%= f.button :submit, "Let's go GreenR", class: "EdgeButton--primary" %>
+      </center>
       <%= render "devise/shared/links" %>
     <% end %>
   </div>
