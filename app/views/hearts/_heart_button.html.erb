@@ -1,5 +1,1 @@
-<% if current_user.heart?(activity) %>
-  <%= button_to "Unheart", unheart_path(activity_id: activity.id), remote: true, method: :delete  %>
-<% else %>
-  <%= button_to "Heart", heart_path(activity_id: activity.id), remote: true  %>
-<% end %>
+
