@@ -2,13 +2,34 @@
   <%= render 'shared/avatar' %>
   <h3>Bienvenue <%= @user.profile.first_name %></h3>
   <div class="infos">
-    <%= link_to "Modifier mes informations", edit_profile_path(current_user)%>
+    <%= link_to "Voir mon profil", edit_profile_path(current_user)%>
   </div>
   <div class="hearted">
-    <p>Mes coups de coeur</p>
+    <p>Mags d'alimentation favoris</p>
+    <% fav_alim = @user.favorites.map {|favorite| favorite.activity.category == "Alimentation" ? favorite : '' }.flatten %>
+    <% fav_alim.each do |favorite| %>
+      <%= render  "shared/activity_cards", activity: favorite.activity %>
+    <% end %>
+    <p>Shops favoris</p>
+    <% fav_shop = @user.favorites.map {|favorite| favorite.activity.category == "Shop" ? favorite : '' }.flatten %>
+    <% fav_shop.each do |favorite| %>
+      <%= render  "shared/activity_cards", activity: favorite.activity %>
+    <% end %>
+    <p>Ateliers favoris</p>
+    <% fav_ateliers = @user.favorites.map {|favorite| favorite.activity.category == "Atelier" ? favorite :  }.flatten %>
+    <% if fav_ateliers %>
+      <% fav_ateliers.each do |favorite| %>
+        <%= render  "shared/activity_cards", activity: favorite.activity %>
+      <% end %>
+      <p>Restaurants favoris</p>
+      <% fav_resto = @user.favorites.map {|favorite| favorite.activity.category == "Restaurant" ? favorite : '' }.flatten %>
+      <% fav_resto.each do |favorite| %>
+        <%= render  "shared/activity_cards", activity: favorite.activity %>
+      <% end %>
+      <p>Events favoris</p>
+      <% fav_event = @user.favorites.map {|favorite| favorite.activity.category == "Event" ? favorite : '' }.flatten %>
+      <% fav_event.each do |favorite| %>
+        <%= render  "shared/activity_cards", activity: favorite.activity %>
+      <% end %>
+    </div>
   </div>
-  <div class="myagenda">
-    <p>Les événements auxquels je participe</p>
-    <% raise %>
-  </div>
-</div>
