@@ -9,7 +9,7 @@ def create
   if @review.save
     redirect_to activity_path(@activity)
   else
-    flash[:alert] = "Something went wrong."
+    flash[:alert] = "Une erreur est survenue"
     redirect_to activity_path(@activity)
   end
 end

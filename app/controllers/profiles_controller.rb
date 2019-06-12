@@ -27,11 +27,9 @@ class ProfilesController < ApplicationController
     @user = current_user
     @profile = @user.profile
     if @profile.update(profile_params)
-      redirect_to edit_profile_path
-      flash.now[:notice] = "Profil mis à jour"
+      redirect_to edit_profile_path, notice: "Profil mis à jour"
     else
-      render :edit
-      flash.now[:alert] = "Une erreur est survenue"
+      render :edit, alert: "Une erreur est survenue"
     end
   end
 
