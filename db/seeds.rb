@@ -220,7 +220,7 @@ alimentation = Activity.create!(
 
 shop = Activity.create!(
  name: "Mon côté bio",
- description: "réation et ventes de vêtements en coton bio et en lin bio confectionnés en France.",
+ description: "Création et ventes de vêtements en coton bio et en lin bio confectionnés en France.",
  category: "Shop",
  street: "125 rue de Lys",
  zipcode: "59390",
