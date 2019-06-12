@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :hearts
   mount ActionCable.server => "/cable"
   resources :activities do
+  member do
+    post 'favorites', to: 'favorites#create', as: :favorite
+    delete 'favorites', to: 'favorites#destroy'
+  end
     resources :reviews, only: [ :new, :create ]
     collection do
       get "event", to: "activities#event"
