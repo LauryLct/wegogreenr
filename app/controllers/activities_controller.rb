@@ -17,6 +17,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @favorite = isfavorite?(@activity)
     @message = Message.new
     # @message.activity_id = @activity[:id]
     # @message.user_id = current_user[:id]
@@ -57,6 +58,10 @@ class ActivitiesController < ApplicationController
   end
 
   private
+
+  def isfavorite?(activity)
+    !Favorite.find_by(user: current_user, activity: activity).nil?
+  end
 
   def set_activity
     @activity = Activity.find(params[:id])
