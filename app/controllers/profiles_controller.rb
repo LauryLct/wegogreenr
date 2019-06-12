@@ -24,18 +24,19 @@ class ProfilesController < ApplicationController
   end
   
   def update
-    @profile.user = current_user
+    @user = current_user
+    @profile = @user.profile
     if @profile.update(profile_params)
-      redirect_to root_path
-      flash[:notice] = "Profil mis à jour"
+      redirect_to edit_profile_path
+      flash.now[:notice] = "Profil mis à jour"
     else
       render :edit
       flash.now[:alert] = "Une erreur est survenue"
     end
   end
-  
+
   private
-  
+
   def profile_params
     params.require(:profile).permit(:first_name, :last_name, :nickname, :gender, :age, :description, :photo)
   end
