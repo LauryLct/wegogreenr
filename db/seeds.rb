@@ -157,4 +157,32 @@ salon = Activity.create!(
   user: stephane,
   url: "https://www.facebook.com/events/salle-andr%C3%A9-malraux-lambersart/la-journ%C3%A9e-des-zh%C3%A9ros-/791997334517444/",
 )
+
+salon = Activity.create!(
+  name: "Le fournil des saveurs",
+  description: "Une boulangerie bio",
+  category: "Event",
+  street: "58 rue kleber",
+  zipcode: "59110",
+  city: "La madeleine",
+  starting_date: "20/05/2020",
+  ending_date: "23/06/2020",
+  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559738170/ZERO_DECHET_sk3n2d.jpg",
+  user: stephane,
+  url: "https://www.facebook.com/events/salle-andr%C3%A9-malraux-lambersart/la-journ%C3%A9e-des-zh%C3%A9ros-/791997334517444/",
+)
+
+salon = Activity.create!(
+  name: "La journée des Z’héros (déchet)",
+  description: "Retrouvez les acteurs les plus actifs de la communauté Zero Waste France",
+  category: "Event",
+  street: "58 rue kleber",
+  zipcode: "59110",
+  city: "La madeleine",
+  starting_date: "20/05/2020",
+  ending_date: "23/06/2020",
+  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559738170/ZERO_DECHET_sk3n2d.jpg",
+  user: stephane,
+  url: "https://www.facebook.com/events/salle-andr%C3%A9-malraux-lambersart/la-journ%C3%A9e-des-zh%C3%A9ros-/791997334517444/",
+)
 puts "all activities created"
