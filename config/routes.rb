@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
   resources :hearts
   mount ActionCable.server => "/cable"
   resources :activities do
@@ -12,6 +13,8 @@ Rails.application.routes.draw do
   resources :profiles, only: [:new, :create, :edit, :update]
 
   devise_for :users
+
+  get '/users/dashboard', to: 'users#show', as: 'dashboard'
 
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
