@@ -157,4 +157,91 @@ salon = Activity.create!(
   user: stephane,
   url: "https://www.facebook.com/events/salle-andr%C3%A9-malraux-lambersart/la-journ%C3%A9e-des-zh%C3%A9ros-/791997334517444/",
 )
+
+boulangerie = Activity.create!(
+  name: "Le fournil des saveurs",
+  description: "Une boulangerie bio",
+  category: "Alimentation",
+  street: "270 rue des Fusillés",
+  zipcode: "59650",
+  city: "Villeneuve d'ascq",
+  remote_photo_url: "https://static.actu.fr/uploads/2017/09/25576-170919150959446-6-854x568.jpg",
+  user: stephane,
+  url: "",
+)
+
+boulangerie2 = Activity.create!(
+  name: "Saveurs et Saisons",
+  description: "Une boulangerie bio",
+  category: "Alimentation",
+  street: "Place de la Nouvelle Aventure Halles de Wazemmes",
+  zipcode: "59000",
+  city: "Lille",
+  remote_photo_url: "https://media-cdn.tripadvisor.com/media/photo-s/0b/a8/41/ca/stand-2.jpg",
+  user: marie,
+  url: "",
+)
+
+restaurant = Activity.create!(
+ name: "Bis 2 fly",
+ description: "Une cuisine exclusivement à base de produits de l'agriculture biologique",
+ category: "Restaurant",
+ street: "19 rue Nicolas Leblanc",
+ zipcode: "59000",
+ city: "Lille",
+ remote_photo_url: "https://pbs.twimg.com/media/BzWA-FyIgAAjg3K.jpg",
+ user: daniel,
+ url: "http://www.bis2fly.com/",
+)
+
+alimentation = Activity.create!(
+ name: "Com à la ferme",
+ description: "Com à la ferme est  un magasin de producteurs. Pour manger bon, frais et de saison",
+ category: "Alimentation",
+ street: "2140 Rue Faidherbe",
+ zipcode: "59134",
+ city: "Fournes-en-Weppes",
+ remote_photo_url: "http://produits-fermiers.e-monsite.com/medias/images/produit-fermier-com-a-laferme.jpg",
+ user: marie,
+ url: "",
+)
+
+alimentation = Activity.create!(
+ name: "Association Interval",
+ description: "Légumes de saison, variétés anciennes.",
+ category: "Alimentation",
+ street: "Rue des Carrières de ciments",
+ zipcode: "59320",
+ city: "Haubourdin",
+ remote_photo_url: "http://produits-fermiers.e-monsite.com/medias/images/produit-fermier-com-a-laferme.jpg",
+ user: marie,
+ url: "",
+)
+
+shop = Activity.create!(
+ name: "Mon côté bio",
+ description: "réation et ventes de vêtements en coton bio et en lin bio confectionnés en France.",
+ category: "Shop",
+ street: "125 rue de Lys",
+ zipcode: "59390",
+ city: "Toufflers",
+ remote_photo_url: "https://www.moncotebio.cc/modules/homeslider/images/d9a9a57b5fd38a05bb33d122ce94c559af55cde0_ambiance-lin.jpg",
+ user: marie,
+ url: "https://www.moncotebio.cc/",
+)
+
+
+shop = Activity.create!(
+ name: "Mon côté bio",
+ description: "réation et ventes de vêtements en coton bio et en lin bio confectionnés en France.",
+ category: "Shop",
+ street: "125 rue de Lys",
+ zipcode: "59390",
+ city: "Toufflers",
+ remote_photo_url: "https://www.moncotebio.cc/modules/homeslider/images/d9a9a57b5fd38a05bb33d122ce94c559af55cde0_ambiance-lin.jpg",
+ user: marie,
+ url: "https://www.moncotebio.cc/",
+)
+
+
 puts "all activities created"
