@@ -3,6 +3,8 @@
   <br>
   <br>
   <br>
+  <br>
+  <br>
   <center>
     <h1>Mot de passe oublié?</h1>
   </center>
@@ -14,10 +16,11 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
-      </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Recevoir l'email", class: "EdgeButton--primary"  %>
-      </div>
+        <center> </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Recevoir l'email", class: "EdgeButton--primary"  %>
+        </div>
+      </center>
     <% end %>
     <div class="form-shared-links">
       <%= render "devise/shared/links" %>
