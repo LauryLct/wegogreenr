@@ -8,8 +8,8 @@
     <p>Mes coups de coeur</p>
   </div>
   <div class="myagenda">
+    <p>Les événements auxquels je participe</p>
     <% activities.each do |activity| %>
-      <p>Les événements auxquels je participe</p>
       <%= render  "shared/activity_cards", activity: activity %>
     <% end %>
   </div>
