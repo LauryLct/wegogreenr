@@ -1,4 +1,4 @@
-<div class="messages shadow-sm p-3 mb-5 bg-white rounded">
+<div class="messages">
   <% @activity.messages.each do |message| %>
     <div class="message <%= current_user && (current_user.id == message.user.id) ? "owner" : '' %>">
       <div class="message-infos">
