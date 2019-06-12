@@ -29,10 +29,10 @@ class Activity < ApplicationRecord
   ]
   # Activity::CATEGORIES.map {|c| c[:label] }
   belongs_to :user
-  has_many :hearts, dependent: :destroy
   geocoded_by :address
   has_many :messages, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   validates :category, inclusion: { in: CATEGORIES.map {|c| c[:label] } }
   validates :street, :zipcode, :city, presence: true
 
