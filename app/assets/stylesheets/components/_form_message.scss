@@ -1,3 +1,20 @@
+#new_message {
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+
+  input[type=text] {
+    width: 100%;
+  }
+}
 
 
+.message_content{
+  width: 80%;
+  height: 40px;
+}
 
+.message-form-button {
+  color: #0497bc;
+
+}
