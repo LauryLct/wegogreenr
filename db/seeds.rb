@@ -231,10 +231,10 @@ shop = Activity.create!(
 )
 
 
-atelier = Activity.create!(
+shop = Activity.create!(
  name: "Mon côté bio",
  description: "réation et ventes de vêtements en coton bio et en lin bio confectionnés en France.",
- category: "Atelier",
+ category: "Shop",
  street: "125 rue de Lys",
  zipcode: "59390",
  city: "Toufflers",
