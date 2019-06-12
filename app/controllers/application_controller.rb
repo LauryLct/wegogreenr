@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     session[:current_path] || activities_path
   end
 
+  def default_url_options
+    { host: ENV["DOMAIN=www.wegogreenr.com"] || "localhost:3000" }
+  end
+
   private
 
   def check_profile!
@@ -18,4 +22,5 @@ class ApplicationController < ActionController::Base
       # flash[:alert] = "Veuillez renseigner un pseudo pour continuer"
     end 
   end
+
 end
