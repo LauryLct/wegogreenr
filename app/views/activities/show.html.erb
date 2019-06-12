@@ -42,6 +42,7 @@
     <% end %>
     <h2>Description:</h2>
     <p><%= @activity.description %></p>
+    <h2>Dialoguez avec la communauté : </h2>
   </div>
   <%= render 'message_box', activity: @activity %>
   <%= render 'messages_send_form', activity: @activity%>

@@ -2,8 +2,6 @@
 <div class="the_map">
 <div
   id="map"
-  style="width: 100%;
-  height: 100vh;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   >
@@ -12,13 +10,17 @@
     <%= image_tag "Logo3.png", id: "gros_logo", class: "mapboxgl-ctrl-top-left" %>
   </div>
   <div class='calculation-box'>
-    <button> <%= image_tag "Event-n", class: "activity_filter", id: "Event" %></button>
-    <button> <%= image_tag "Alimentation-n", class: "activity_filter", id: "Alimentation" %></button>
-    <button> <%= image_tag "DIY-n", class: "activity_filter", id: "DIY" %></button>
-    <button> <%= image_tag "Restaurant-n", class: "activity_filter", id: "Restaurant" %></button>
-    <button> <%= image_tag "Shop-n", class: "activity_filter", id: "Shop" %></button>
-    <button> <%= image_tag "Logo3-simple-plein", class: "activity_filter", id: "all" %></button>
+    <div> <%= image_tag "Event-n", class: "activity_filter", id: "Event" %></div>
+    <div> <%= image_tag "Alimentation-n", class: "activity_filter", id: "Alimentation" %></div>
+    <div> <%= image_tag "DIY-n", class: "activity_filter", id: "DIY" %></div>
+    <div> <%= image_tag "Restaurant-n", class: "activity_filter", id: "Restaurant" %></div>
+    <div> <%= image_tag "Shop-n", class: "activity_filter", id: "Shop" %></div>
+    <div> <%= image_tag "Logo3-simple-plein", class: "activity_filter", id: "all" %></div>
   </div>
+</div>
+
+<div id="test">
+
 </div>
 
 <script>
