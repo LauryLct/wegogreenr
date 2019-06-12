@@ -40,12 +40,20 @@
     </div>
     <h2>Adresse: </h2>
     <p><i><%= @activity.street %>, <%= @activity.zipcode %>, <%= @activity.city %>.</i></p>
-    <h2>URL: </h2>
-    <span><%= link_to "Site web", @activity.url, target: :_blank, class: "url-show-activity"%></span>
+    <% if @activity.url.blank? == false %>
+      <h2>URL: </h2>
+      <span><%= link_to "Site web", @activity.url, target: :_blank, class: "url-show-activity"%></span>
+    <% end %>
     <h2>Description:</h2>
     <p><%= @activity.description %></p>
+
+    <div class="border-bottom"></div>
+
+    <h2>Dialoguez avec la communauté : </h2>
   </div>
+
 
   <%= render 'message_box', activity: @activity %>
   <%= render 'messages_send_form', activity: @activity%>
+
 </div>

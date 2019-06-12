@@ -23,6 +23,8 @@
   overflow: auto;
   max-height: 50vh;
   margin-bottom: 10px;
+  border-radius: 3px;
+  padding-bottom: 5px;
 }
 
 .message {
@@ -88,4 +90,11 @@
 
 .url-show-activity:hover {
   text-decoration: none;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #044343;
+  text-align: center;
+  margin-right: 20%;
+  margin-left: 20%;
 }

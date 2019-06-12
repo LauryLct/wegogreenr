@@ -3,7 +3,9 @@
    <%= simple_form_for @message, remote: true, id: "form_id_here" do |f| %>
      <%= f.input :content, label: false %>
      <input name="message[activity_id]" type="hidden" value="<%= @activity.id %>">
-     <%= f.button :submit, 'send', class: 'message-form-button'%>
+     <%= button_tag type: 'submit', class: "message-form-button" do %>
+      <i class="far fa-paper-plane"></i>
+     <% end %>
    <% end %>
  <% else %>
    <a id="message-form-signin" href="/users/sign_in">Connectez-vous pour envoyer un message</a>

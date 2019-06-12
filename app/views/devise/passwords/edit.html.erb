@@ -20,13 +20,11 @@
                 input_html: { autocomplete: "new-password" } %>
         <%= f.input :password_confirmation, label: "Confirm your new password", required: true %>
       </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Change my password", class: "EdgeButton--primary"  %>
-      </div>
+      <center>
+        <div class="form-actions">
+          <%= f.button :submit, "Change my password", class: "EdgeButton--primary"  %>
+        </div>
+      </center>
     <% end %>
-    <div class="form-shared-links">
-      <%= render "devise/shared/links" %>
-    </div>
-    <%# <%= link_to "Retour", :back %> %>
   </div>
 </div>
