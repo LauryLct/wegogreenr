@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "We Go GreenR"
+meta_title: "We Go GreenR - Réseau Social écologique et engagé!"
+meta_description: "We Go GreenR est un réseau social collaboratif qui te permet de trouver autour de toi des activités et évènements eco-responsables"
+meta_image: "WeGoGreenR_home.jpg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
