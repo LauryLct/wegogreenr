@@ -34,7 +34,7 @@ laury = User.create!(
 Profile.create!(
   first_name: "Laury",
   last_name: "Lecaut",
-  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560441143/Laury_xe1bmy.jpg",
+  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560441467/Laury-squared_ukxtys.jpg",
   age: 32,
   nickname: "GreenDevOfTheWorldAndUniverse",
   user: laury,
@@ -136,7 +136,7 @@ Review.create!(
   user: [laury, daniel, marie, stephane].sample,
   )
 
-  cap = Activity.create!(
+cap = Activity.create!(
  name: "Cap ou pas cap",
  description: "de nombreux ateliers : informatique, bricolage, cuisine, jardinage...",
  category: "DIY",
@@ -239,8 +239,8 @@ Review.create!(
   user: [laury, daniel, marie, stephane].sample,
   )
 
-  so_bio = Activity.create!(
-  name: "el MARKET",
+so_bio = Activity.create!(
+  name: "So Bio",
   description: "Shop eco-responsable",
   category: "Shop",
   street: "128 Rue Léon Gambetta",
@@ -271,7 +271,7 @@ dechets = Activity.create!(
 )
 
 dechet = Activity.create!(
-  name: "World clean up day",
+  name: "World clean up",
   description: "Ramassons les déchets dans nos quartiers",
   category: "Event",
   street: "Place de la bourse",
@@ -298,7 +298,7 @@ festival = Activity.create!(
   url: "https://www.welovegreen.fr/",
 )
 
-festival = Activity.create!(
+festivalbx = Activity.create!(
   name: "We Love Green Festival",
   description: "Une super programmation, une organisation eco-friendly",
   category: "Event",
