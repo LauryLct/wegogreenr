@@ -1,7 +1,7 @@
 <div class="event-pic-show">
   <%= cl_image_tag @activity.photo %>
-  <div id="heart">
-    <%= render 'favorites/fav_card', favorite: @favorite %>
+  <div id="heart" data-heart="<%= @activity.id %>">
+    <%= render 'favorites/fav_card', activity: @activity, favorite: @favorite %>
   </div>
 </div>
 <div class="container">
