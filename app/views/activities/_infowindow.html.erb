@@ -1,6 +1,11 @@
 <div class= mapbox>
   <%= link_to activity_path(activity), class: "activity-link-show" do %>
     <%= cl_image_tag(activity.photo, height: 100, width: 200, crop: :fill,) %>
+      <% if @favorite %>
+    <i class="far fa-heart"></i>
+      <% else %>
+    <i class="fas fa-heart"></i>
+      <% end %>
     <div class="mapbox-title">
       <h5><%= activity.name %></h5>
         <%= render 'shared/stars', activity: activity %>

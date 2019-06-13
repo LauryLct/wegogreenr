@@ -1,12 +1,8 @@
-#heart {
-  position: relative;
-  .moyen {
-  width: 100px;
-  height: 100px;
-  font-size: 25px;
-  color: yellow;
-  position: absolute;
-  bottom: -50px;
-  right: 10px;
-  }
+.event-txt-show .moyen {
+  color: #8a00d4 !important;
+  margin-bottom: 30px !important;
+}
+
+.form-group {
+  padding-top: 10px !important;
 }
