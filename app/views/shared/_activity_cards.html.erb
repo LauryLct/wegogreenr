@@ -1,0 +1,14 @@
+<%= link_to activity_path(activity) do %>
+  <div class="card-activity">
+    <%= cl_image_tag activity.photo, class: "card-activity-pic" %>
+    <div class="card-activity-infos">
+      <div>
+        <h2><%= activity.name %></h2>
+        <p> <%= activity.city %></p>
+        <% if activity.category == "Event" %>
+          <p>Du <%= activity.starting_date %> au <%= activity.ending_date %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

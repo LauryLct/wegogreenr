@@ -9,13 +9,10 @@
     <h1><strong><%= @activity.name %></strong> - <%= link_to edit_activity_path(@activity) do  %>
         <span><i class="far fa-edit"></i></span>
       <% end %>
-      <div>
-        <span>
-          <div class="moyen"><%= render 'shared/stars', activity: @activity %></div>
-        </span>
-      </div>
     </h1>
-    <h2><div class="moyen"><%= render 'shared/stars', activity: @activity %></div></h2>
+    <h2>
+      <div class="moyen"><%= render 'shared/stars', activity: @activity %></div>
+    </h2>
     <div class="avg-rate-display">
       <% if @activity.starting_date.blank? == false %>
         <p>Du <%= @activity.starting_date.strftime("%d-%m-%Y") %> au <%= @activity.ending_date.strftime("%d-%m-%Y") %></p>
