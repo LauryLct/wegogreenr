@@ -68,7 +68,7 @@ Profile.create!(
 
 puts "all users & profiles created"
 
-restaurant = Activity.create!(
+le_cirque = Activity.create!(
  name: "Le cirque",
  description: "Ce café d'auberge de jeunesse propose une petite restauration à base de produits bio, locaux et équitables.",
  category: "Restaurant",
@@ -79,8 +79,13 @@ restaurant = Activity.create!(
  user: marie,
  url: "https://fr-fr.facebook.com/lecirque.lille/",
 )
+Review.create!(
+  rate: rand(1..5),
+  activity: le_cirque,
+  user: [laury, daniel, marie, stephane].sample,
+  )
 
-epicerie = Activity.create!(
+robin = Activity.create!(
  name: "Robin des bios",
  description: "epicerie associative - Vrac et 100% Bio",
  category: "Alimentation",
@@ -91,8 +96,13 @@ epicerie = Activity.create!(
  user: marie,
  url: "https://www.robindesbio.org/",
 )
+Review.create!(
+  rate: rand(1..5),
+  activity: robin,
+  user: [laury, daniel, marie, stephane].sample,
+  )
 
-atelier = Activity.create!(
+biloba = Activity.create!(
   name: "Mademoiselle Biloba - L'atelier cosmétique",
   description: "Apprenez à réaliser vous-même vos cosmétiques et soins naturels",
   category: "DIY",
@@ -103,8 +113,13 @@ atelier = Activity.create!(
   user: daniel,
   url:"https://mademoiselle-biloba.fr/",
 )
+Review.create!(
+  rate: rand(1..5),
+  activity: biloba,
+  user: [laury, daniel, marie, stephane].sample,
+  )
 
-shop = Activity.create!(
+el_market = Activity.create!(
   name: "el MARKET",
   description: "Shop eco-responsable",
   category: "Shop",
@@ -115,6 +130,11 @@ shop = Activity.create!(
   user: stephane,
   url: "https://www.elmarket.fr/",
 )
+Review.create!(
+  rate: rand(1..5),
+  activity: el_market,
+  user: [laury, daniel, marie, stephane].sample,
+  )
 
 dechets = Activity.create!(
   name: "World clean up day",
@@ -169,6 +189,11 @@ boulangerie = Activity.create!(
   user: stephane,
   url: "",
 )
+Review.create!(
+  rate: rand(1..5),
+  activity: boulangerie,
+  user: [laury, daniel, marie, stephane].sample,
+  )
 
 boulangerie2 = Activity.create!(
   name: "Saveurs et Saisons",
@@ -181,8 +206,13 @@ boulangerie2 = Activity.create!(
   user: marie,
   url: "",
 )
+Review.create!(
+  rate: rand(1..5),
+  activity: boulangerie2,
+  user: [laury, daniel, marie, stephane].sample,
+  )
 
-restaurant = Activity.create!(
+bis_2_fly = Activity.create!(
  name: "Bis 2 fly",
  description: "Une cuisine exclusivement à base de produits de l'agriculture biologique",
  category: "Restaurant",
@@ -193,8 +223,13 @@ restaurant = Activity.create!(
  user: daniel,
  url: "http://www.bis2fly.com/",
 )
+Review.create!(
+  rate: 4,
+  activity: bis_2_fly,
+  user: [laury, daniel, marie, stephane].sample,
+  )
 
-alimentation = Activity.create!(
+com_ferme = Activity.create!(
  name: "Com à la ferme",
  description: "Com à la ferme est  un magasin de producteurs. Pour manger bon, frais et de saison",
  category: "Alimentation",
@@ -205,8 +240,13 @@ alimentation = Activity.create!(
  user: marie,
  url: "",
 )
+Review.create!(
+  rate: rand(1..5),
+  activity: com_ferme,
+  user: [laury, daniel, marie, stephane].sample,
+  )
 
-alimentation = Activity.create!(
+interval = Activity.create!(
  name: "Association Interval",
  description: "Légumes de saison, variétés anciennes.",
  category: "Alimentation",
@@ -217,8 +257,13 @@ alimentation = Activity.create!(
  user: marie,
  url: "",
 )
+Review.create!(
+  rate: rand(1..5),
+  activity: interval,
+  user: [laury, daniel, marie, stephane].sample,
+  )
 
-shop = Activity.create!(
+cote_bio = Activity.create!(
  name: "Mon côté bio",
  description: "réation et ventes de vêtements en coton bio et en lin bio confectionnés en France.",
  category: "Shop",
@@ -230,18 +275,31 @@ shop = Activity.create!(
  url: "https://www.moncotebio.cc/",
 )
 
-
-shop = Activity.create!(
- name: "Mon côté bio",
- description: "réation et ventes de vêtements en coton bio et en lin bio confectionnés en France.",
- category: "Shop",
- street: "125 rue de Lys",
- zipcode: "59390",
- city: "Toufflers",
- remote_photo_url: "https://www.moncotebio.cc/modules/homeslider/images/d9a9a57b5fd38a05bb33d122ce94c559af55cde0_ambiance-lin.jpg",
- user: marie,
- url: "https://www.moncotebio.cc/",
-)
-
+Review.create!(
+  rate: rand(1..5),
+  activity: cote_bio,
+  user: [laury, daniel, marie, stephane].sample,
+  )
 
 puts "all activities created"
+
+message_1 = Message.create!(
+  content: "Salut ! Quelqu'un a déjà testé ce restaurant ?",
+  user: marie,
+  activity: bis_2_fly,
+
+  )
+
+message_2 = Message.create!(
+  content: "Salut Marie, J'y vais ce weekend normalement, je vous dirai ce que j'en pense",
+  user: laury,
+  activity: bis_2_fly,
+  )
+
+message_3 = Message.create!(
+  content: "Salut, C'est vraiment très bon, et super ambiance, je le conseille",
+  user: daniel,
+  activity: bis_2_fly,
+  )
+
+puts "All messages created"

@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 2019_06_12_114713) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
+  create_table "hearts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "activity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_hearts_on_activity_id"
+    t.index ["user_id"], name: "index_hearts_on_user_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id"
@@ -93,6 +102,8 @@ ActiveRecord::Schema.define(version: 2019_06_12_114713) do
   add_foreign_key "activities", "users"
   add_foreign_key "favorites", "activities"
   add_foreign_key "favorites", "users"
+  add_foreign_key "hearts", "activities"
+  add_foreign_key "hearts", "users"
   add_foreign_key "messages", "activities"
   add_foreign_key "messages", "users"
   add_foreign_key "profiles", "users"
