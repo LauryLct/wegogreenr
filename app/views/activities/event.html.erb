@@ -1,18 +1,15 @@
 <div class="container">
-  <h1> Tous les events</h1>
+  <h2> Tous les events</h2>
   <div class="grid">
     <% @activities.each do |activity| %>
       <% if activity.category == "Event" %>
         <%= render "activities/cards_event", activity: activity %>
       <% end %>
     <% end %>
-    <br>
     <div class="ajout">
       <center>
-      <%= link_to "Ajouter un événement", new_activity_path, class: "border EdgeButton--secondary" %>
-    </center>
+        <%= link_to "J'ajoute un event!", new_activity_path, class: "border EdgeButton--secondary" %>
+      </center>
     </div>
   </div>
-
 </div>
-
