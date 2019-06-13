@@ -1,1 +1,1 @@
-document.getElementById('heart').innerHTML = "<%= j render 'favorites/fav_card', favorite: false %>"
+document.querySelector("[data-heart='<%= @activity.id %>']").innerHTML = "<%= j render 'favorites/fav_card', activity: @activity, favorite: false %>"
