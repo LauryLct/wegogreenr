@@ -1,29 +1,50 @@
 <div class="container">
-  <%= render 'shared/avatar' %>
-  <h3>Bienvenue <%= @user.profile.first_name %></h3>
-  <div class="infos">
-    <%= link_to "Voir mon profil", edit_profile_path(current_user)%>
+  <div class="avatar">
+    <%= render 'shared/avatar' %>
   </div>
-  <div class="hearted">
-    <p>Alimentations favoris</p>
+  <div class="name">
+    <h3>Bienvenue <%= @user.profile.first_name %></h3>
+    <h5>voir mon profil</h5>
+  </div>
+</div>
+<div class="valeur-1">
+  <%= image_tag "Alimentation-n.png", class: "icon-alimentation" %>
+  <div>
+    <h5>MES EPICERIES PREFEREES</h5>
     <% @user.favorites.joins(:activity).where(activities: { category: 'Alimentation' }).each do |favorite| %>
-      <%= render  "shared/activity_cards", activity: favorite.activity %>
-    <% end %>
-    <p>Shops favoris</p>
-    <% @user.favorites.joins(:activity).where(activities: { category: 'Shop' }).each do |favorite| %>
-      <%= render  "shared/activity_cards", activity: favorite.activity %>
-    <% end %>
-    <p>Ateliers favoris</p>
-    <% @user.favorites.joins(:activity).where(activities: { category: 'Atelier' }).each do |favorite| %>
-      <%= render  "shared/activity_cards", activity: favorite.activity %>
-    <% end %>
-    <p>Restaurants favoris</p>
-    <% @user.favorites.joins(:activity).where(activities: { category: 'Restaurant' }).each do |favorite| %>
-      <%= render  "shared/activity_cards", activity: favorite.activity %>
-    <% end %>
-    <p>Events favoris</p>
-    <% @user.favorites.joins(:activity).where(activities: { category: 'Event' }).each do |favorite| %>
-      <%= render  "shared/activity_cards", activity: favorite.activity %>
     <% end %>
   </div>
+</div>
+<div class="valeur-4">
+  <%= image_tag "Restaurant-n.png", class: "icon-restaurant" %>
+  <div>
+    <h5>MES RESTAURANTS PREFERES</h5>
+    <% @user.favorites.joins(:activity).where(activities: { category: 'Restaurant' }).each do |favorite| %>
+    <% end %>
+  </div>
+</div>
+<div class="valeur-2">
+  <%= image_tag "Shop-n.png", class: "icon-shop" %>
+  <div>
+    <h5>MES SHOPS PREFERES</h5>
+    <% @user.favorites.joins(:activity).where(activities: { category: 'Shop' }).each do |favorite| %>
+    <% end %>
+  </div>
+</div>
+<div class="valeur-3">
+  <%= image_tag "DIY-n.png", class: "icon-DIY" %>
+  <div>
+    <h5>MES ATELIERS PREFERES</h5>
+    <% @user.favorites.joins(:activity).where(activities: { category: 'Atelier' }).each do |favorite| %>
+    <% end %>
+  </div>
+</div>
+<div class="valeur-4">
+  <%= image_tag "Event-n.png", class: "icon-event" %>
+  <div>
+    <h5>MES EVENTS</h5>
+    <% @user.favorites.joins(:activity).where(activities: { category: 'Event' }).each do |favorite| %>
+    <% end %>
+  </div>
+</div>
 </div>
