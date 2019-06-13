@@ -68,6 +68,109 @@ Profile.create!(
 
 puts "all users & profiles created"
 
+so_bio = Activity.create!(
+ name: "So Bio",
+ description: "Pour vous garantir la plus grande qualité, nous privilégions toujours la proximité en travaillant avec des producteurs locaux.",
+ category: "Alimentation",
+ street: "3 Avenue Gustave Effeil",
+ zipcode: "33600",
+ city: "Pessac",
+ remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737826/le_cirque_ykjjw7.jpg",
+ user: marie,
+ url: "http://www.bio-c-bon.eu/",
+)
+Review.create!(
+  rate: rand(1..5),
+  activity: so_bio,
+  user: [laury, daniel, marie, stephane].sample,
+  )
+
+ptit_bio = Activity.create!(
+ name: "Le p'tit bio",
+ description: "Des produits issus de l'agriculture biologique.",
+ category: "Restaurant",
+ street: "273 cours de l'Argonne",
+ zipcode: "33000",
+ city: "Bordeaux",
+ remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560438754/sobio_zoe4y3.jpg",
+ user: marie,
+ url: "http://riedel.unblog.fr/",
+)
+Review.create!(
+  rate: rand(1..5),
+  activity: ptit_bio,
+  user: [laury, daniel, marie, stephane].sample,
+  )
+
+colibris = Activity.create!(
+ name: "Colibris",
+ description: "Maraîchers et primeurs, bouchers, fromagers, céréales, pain, vins, spécialités...",
+ category: "Alimentation",
+ street: "Place des Martyrs de la Résistance",
+ zipcode: "33200",
+ city: "Bordeaux",
+ remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560439088/colibris_bbf7zx.jpg",
+ user: marie,
+ url: "http://riedel.unblog.fr/",
+)
+Review.create!(
+  rate: rand(1..5),
+  activity: colibris,
+  user: [laury, daniel, marie, stephane].sample,
+  )
+
+artisans = Activity.create!(
+ name: "Artisans du monde",
+ description: "Une large gamme de produits 100% équitables avec plus de 1000 références.",
+ category: "Shop",
+ street: "30 rue du parlement Saint Pierre",
+ zipcode: "33000",
+ city: "Bordeaux",
+ remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560439412/artisan_b7gzhm.jpg",
+ user: marie,
+ url: "http://bordeaux.artisansdumonde.org",
+)
+Review.create!(
+  rate: rand(1..5),
+  activity: artisans,
+  user: [laury, daniel, marie, stephane].sample,
+  )
+
+  cap = Activity.create!(
+ name: "Cap ou pas cap",
+ description: "de nombreux ateliers : informatique, bricolage, cuisine, jardinage...",
+ category: "Shop",
+ street: "17 Place Roosevelt",
+ zipcode: "33110",
+ city: "Le Bouscat",
+ remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560439867/cap_yz80u1.jpg",
+ user: marie,
+ url: "http://bouscat-solidarite.fr/",
+)
+Review.create!(
+  rate: rand(1..5),
+  activity: cap,
+  user: [laury, daniel, marie, stephane].sample,
+  )
+
+la_classe = Activity.create!(
+ name: "La classe",
+ description: "Ce café d'auberge de jeunesse propose une petite restauration à base de produits bio, locaux et équitables.",
+ category: "Restaurant",
+ street: "100 cours du médoc",
+ zipcode: "33000",
+ city: "Bordeaux",
+ remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737826/le_cirque_ykjjw7.jpg",
+ user: marie,
+ url: "https://fr-fr.facebook.com/lecirque.lille/",
+)
+Review.create!(
+  rate: rand(1..5),
+  activity: la_classe,
+  user: [laury, daniel, marie, stephane].sample,
+  )
+
+
 le_cirque = Activity.create!(
  name: "Le cirque",
  description: "Ce café d'auberge de jeunesse propose une petite restauration à base de produits bio, locaux et équitables.",
