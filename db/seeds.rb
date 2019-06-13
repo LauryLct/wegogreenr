@@ -34,7 +34,7 @@ laury = User.create!(
 Profile.create!(
   first_name: "Laury",
   last_name: "Lecaut",
-  remote_photo_url: "https://avatars3.githubusercontent.com/u/32016201?s=460&v=4",
+  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560441467/Laury-squared_ukxtys.jpg",
   age: 32,
   nickname: "GreenDevOfTheWorldAndUniverse",
   user: laury,
@@ -67,6 +67,109 @@ Profile.create!(
 )
 
 puts "all users & profiles created"
+
+so_bio = Activity.create!(
+ name: "So Bio",
+ description: "Pour vous garantir la plus grande qualité, nous privilégions toujours la proximité en travaillant avec des producteurs locaux.",
+ category: "Alimentation",
+ street: "3 Avenue Gustave Effeil",
+ zipcode: "33600",
+ city: "Pessac",
+ remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737826/le_cirque_ykjjw7.jpg",
+ user: marie,
+ url: "http://www.bio-c-bon.eu/",
+)
+Review.create!(
+  rate: rand(1..5),
+  activity: so_bio,
+  user: [laury, daniel, marie, stephane].sample,
+  )
+
+ptit_bio = Activity.create!(
+ name: "Le p'tit bio",
+ description: "Des produits issus de l'agriculture biologique.",
+ category: "Restaurant",
+ street: "273 cours de l'Argonne",
+ zipcode: "33000",
+ city: "Bordeaux",
+ remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560438754/sobio_zoe4y3.jpg",
+ user: marie,
+ url: "http://riedel.unblog.fr/",
+)
+Review.create!(
+  rate: rand(1..5),
+  activity: ptit_bio,
+  user: [laury, daniel, marie, stephane].sample,
+  )
+
+colibris = Activity.create!(
+ name: "Colibris",
+ description: "Maraîchers et primeurs, bouchers, fromagers, céréales, pain, vins, spécialités...",
+ category: "Alimentation",
+ street: "Place des Martyrs de la Résistance",
+ zipcode: "33200",
+ city: "Bordeaux",
+ remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560439088/colibris_bbf7zx.jpg",
+ user: marie,
+ url: "http://riedel.unblog.fr/",
+)
+Review.create!(
+  rate: rand(1..5),
+  activity: colibris,
+  user: [laury, daniel, marie, stephane].sample,
+  )
+
+artisans = Activity.create!(
+ name: "Artisans du monde",
+ description: "Une large gamme de produits 100% équitables avec plus de 1000 références.",
+ category: "Shop",
+ street: "30 rue du parlement Saint Pierre",
+ zipcode: "33000",
+ city: "Bordeaux",
+ remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560439412/artisan_b7gzhm.jpg",
+ user: marie,
+ url: "http://bordeaux.artisansdumonde.org",
+)
+Review.create!(
+  rate: rand(1..5),
+  activity: artisans,
+  user: [laury, daniel, marie, stephane].sample,
+  )
+
+cap = Activity.create!(
+ name: "Cap ou pas cap",
+ description: "de nombreux ateliers : informatique, bricolage, cuisine, jardinage...",
+ category: "DIY",
+ street: "17 Place Roosevelt",
+ zipcode: "33110",
+ city: "Le Bouscat",
+ remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560439867/cap_yz80u1.jpg",
+ user: marie,
+ url: "http://bouscat-solidarite.fr/",
+)
+Review.create!(
+  rate: rand(1..5),
+  activity: cap,
+  user: [laury, daniel, marie, stephane].sample,
+  )
+
+la_classe = Activity.create!(
+ name: "La classe",
+ description: "Ce café d'auberge de jeunesse propose une petite restauration à base de produits bio, locaux et équitables.",
+ category: "Restaurant",
+ street: "100 cours du médoc",
+ zipcode: "33000",
+ city: "Bordeaux",
+ remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737826/le_cirque_ykjjw7.jpg",
+ user: marie,
+ url: "https://fr-fr.facebook.com/lecirque.lille/",
+)
+Review.create!(
+  rate: rand(1..5),
+  activity: la_classe,
+  user: [laury, daniel, marie, stephane].sample,
+  )
+
 
 le_cirque = Activity.create!(
  name: "Le cirque",
@@ -136,6 +239,23 @@ Review.create!(
   user: [laury, daniel, marie, stephane].sample,
   )
 
+so_bio = Activity.create!(
+  name: "So Bio",
+  description: "Shop eco-responsable",
+  category: "Shop",
+  street: "128 Rue Léon Gambetta",
+  zipcode: "59000",
+  city: "Lille",
+  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737819/elmarket_aztxhp.png",
+  user: stephane,
+  url: "https://www.elmarket.fr/",
+)
+Review.create!(
+  rate: rand(1..5),
+  activity: el_market,
+  user: [laury, daniel, marie, stephane].sample,
+  )
+
 dechets = Activity.create!(
   name: "World clean up day",
   description: "Ramassons les déchets dans nos quartiers",
@@ -150,6 +270,20 @@ dechets = Activity.create!(
   url: "https://www.worldcleanupday.fr/",
 )
 
+dechet = Activity.create!(
+  name: "World clean up",
+  description: "Ramassons les déchets dans nos quartiers",
+  category: "Event",
+  street: "Place de la bourse",
+  zipcode: "33000",
+  city: "Bordeaux",
+  starting_date: "14/06/2019",
+  ending_date: "14/06/2019",
+  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737829/worldcleanup_m5h0ln.png",
+  user: stephane,
+  url: "https://www.worldcleanupday.fr/",
+)
+
 festival = Activity.create!(
   name: "We Love Green Festival",
   description: "Une super programmation, une organisation eco-friendly",
@@ -157,6 +291,20 @@ festival = Activity.create!(
   street: "12 avenue de verdun",
   zipcode: "59130",
   city: "Lambersart",
+  starting_date: "15/06/2019",
+  ending_date: "16/06/2019",
+  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737824/festival_udaurr.png",
+  user: marie,
+  url: "https://www.welovegreen.fr/",
+)
+
+festivalbx = Activity.create!(
+  name: "We Love Green Festival",
+  description: "Une super programmation, une organisation eco-friendly",
+  category: "Event",
+  street: "Place des quinconces",
+  zipcode: "33000",
+  city: "Bordeaux",
   starting_date: "15/06/2019",
   ending_date: "16/06/2019",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737824/festival_udaurr.png",

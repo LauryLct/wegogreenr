@@ -1,4 +1,3 @@
-<%= link_to activity_path(activity), class: "activity-link-show" do %>
   <div class="card-event">
     <% unless current_user.nil? %>
       <% if activity.favorites.find_by(user: current_user).nil? %>
@@ -14,6 +13,18 @@
       <div>
         <p><%= activity.description %></p>
       </div>
+    <div id="heart" data-heart="<%= activity.id %>">
+      <%= render 'favorites/fav_card',activity: activity, favorite: activity.favorites.find_by(user: current_user) %>
+
     </div>
+      <%= cl_image_tag activity.photo, class: "event-pic" %>
+    <%= link_to activity_path(activity), class: "activity-link-show" do %>
+      <div class="info-event">
+        <h3 style="font-size: 12px"><strong>Du <%= activity.starting_date.strftime("%d-%m-%Y") %> au <%= activity.ending_date.strftime("%d-%m-%Y") %> </strong></h3>
+            <h2><strong><%= activity.name %></strong></h2>
+        <div>
+          <p><%= activity.description %></p>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
