@@ -1,9 +1,16 @@
-<% if !favorite %>
-  <%= link_to favorite_activity_path(@activity), method: :post, id: 'hearticn', remote: true do %>
+<% if current_user.nil? %>
+  <%= link_to new_user_session_path, id: 'hearticn' do %>
     <i class="far fa-heart"></i>
   <% end %>
+
 <% else %>
-  <%= link_to favorite_activity_path(@activity), method: :delete, id: 'hearticn', remote: true do %>
-    <i class="fas fa-heart"></i>
+  <% if !favorite %>
+    <%= link_to favorite_activity_path(@activity), method: :post, id: 'hearticn', remote: true do %>
+      <i class="far fa-heart"></i>
+    <% end %>
+  <% else %>
+    <%= link_to favorite_activity_path(@activity), method: :delete, id: 'hearticn', remote: true do %>
+      <i class="fas fa-heart"></i>
+    <% end %>
   <% end %>
 <% end %>
