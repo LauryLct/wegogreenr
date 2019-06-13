@@ -2,12 +2,16 @@
   <div class="avatar">
     <%= render 'shared/avatar' %>
   </div>
+
   <div class="name">
     <h3>Bienvenue <%= @user.profile.first_name %></h3>
     <%= link_to "modifier mon profil", edit_profile_path(current_user), class: "sous-titre" %>
   </div>
-  <div class="sous-cat">
-    <div class="valeur">
+
+</div>
+  <div>
+    <div class="valeur-1 event_l", id="aliment">
+
       <%= image_tag "Alimentation-n.png", class: "icon-alimentation" %>
       <div>
         <h5>MES EPICERIES PREFEREES</h5>
@@ -15,7 +19,14 @@
         <% end %>
       </div>
     </div>
-    <div class="valeur">
+    <div class="select aliment" hidden>
+      <% @user.favorites.joins(:activity).where(activities: { category: 'Alimentation' }).each do |favorite| %>
+        <%= render  "shared/activity_cards", activity: favorite.activity %>
+      <% end %>
+    </div>
+
+    <div class="valeur-4 event_l", id="restau">
+
       <%= image_tag "Restaurant-n.png", class: "icon-restaurant" %>
       <div>
         <h5>MES RESTAURANTS PREFERES</h5>
@@ -23,7 +34,15 @@
         <% end %>
       </div>
     </div>
-    <div class="valeur">
+
+    <div class="select restau" hidden>
+        <% @user.favorites.joins(:activity).where(activities: { category: 'Restaurant' }).each do |favorite| %>
+          <%= render  "shared/activity_cards", activity: favorite.activity %>
+        <% end %>
+      </div>
+
+    <div class="valeur-2 event_l", id="shop">
+
       <%= image_tag "Shop-n.png", class: "icon-shop" %>
       <div>
         <h5>MES SHOPS PREFERES</h5>
@@ -31,7 +50,15 @@
         <% end %>
       </div>
     </div>
-    <div class="valeur">
+
+    <div class="select shop" hidden>
+        <% @user.favorites.joins(:activity).where(activities: { category: 'Shop' }).each do |favorite| %>
+          <%= render  "shared/activity_cards", activity: favorite.activity %>
+        <% end %>
+      </div>
+
+    <div class="valeur-3 event_l", id="atelier">
+
       <%= image_tag "DIY-n.png", class: "icon-DIY" %>
       <div>
         <h5>MES ATELIERS PREFERES</h5>
@@ -39,13 +66,48 @@
         <% end %>
       </div>
     </div>
-    <div class="valeur">
+
+    <div class="select atelier" hidden>
+        <% @user.favorites.joins(:activity).where(activities: { category: 'Atelier' }).each do |favorite| %>
+          <%= render  "shared/activity_cards", activity: favorite.activity %>
+        <% end %>
+      </div>
+
+    <div class="valeur-4 event_l", id="evenement">
+
       <%= image_tag "Event-n.png", class: "icon-event" %>
       <div>
         <h5>MES EVENTS</h5>
         <% @user.favorites.joins(:activity).where(activities: { category: 'Event' }).each do |favorite| %>
         <% end %>
+
+    </div>
+  </div>
+  <div class="select evenement" hidden >
+        <% @user.favorites.joins(:activity).where(activities: { category: 'Event' }).each do |favorite| %>
+          <%= render  "shared/activity_cards", activity: favorite.activity %>
+        <% end %>
+
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  var button = document.querySelectorAll('.event_l')
+  console.log(button);
+  button.forEach((icon)=> {
+    icon.addEventListener('click', function(event){
+      console.log(event.currentTarget.id)
+      var all = document.querySelectorAll('.select');
+      var elementSelect = document.querySelectorAll(`.select.${event.currentTarget.id}`);
+      all.forEach((element) => {
+        element.setAttribute('hidden', true);
+      })
+      elementSelect.forEach((element) => {
+        element.removeAttribute('hidden');
+      })
+    })
+    } )
+</script>
+
