@@ -5,25 +5,66 @@
     <%= link_to "Voir mon profil", edit_profile_path(current_user)%>
   </div>
   <div class="hearted">
-    <p>Alimentations favoris</p>
-    <% @user.favorites.joins(:activity).where(activities: { category: 'Alimentation' }).each do |favorite| %>
-      <%= render  "shared/activity_cards", activity: favorite.activity %>
-    <% end %>
-    <p>Shops favoris</p>
-    <% @user.favorites.joins(:activity).where(activities: { category: 'Shop' }).each do |favorite| %>
-      <%= render  "shared/activity_cards", activity: favorite.activity %>
-    <% end %>
-    <p>Ateliers favoris</p>
-    <% @user.favorites.joins(:activity).where(activities: { category: 'Atelier' }).each do |favorite| %>
-      <%= render  "shared/activity_cards", activity: favorite.activity %>
-    <% end %>
-    <p>Restaurants favoris</p>
-    <% @user.favorites.joins(:activity).where(activities: { category: 'Restaurant' }).each do |favorite| %>
-      <%= render  "shared/activity_cards", activity: favorite.activity %>
-    <% end %>
-    <p>Events favoris</p>
-    <% @user.favorites.joins(:activity).where(activities: { category: 'Event' }).each do |favorite| %>
-      <%= render  "shared/activity_cards", activity: favorite.activity %>
-    <% end %>
+
+    <div class="event_l">
+
+      <div id="aliment">aliment</div>
+      <div id="restau">restau</div>
+      <div id="shop">shop</div>
+      <div id="atelier">atelier</div>
+      <div id="evenement">event</div>
+
+    </div>
+
+
+    <div class="select aliment">
+      <% @user.favorites.joins(:activity).where(activities: { category: 'Alimentation' }).each do |favorite| %>
+        <%= render  "shared/activity_cards", activity: favorite.activity %>
+      <% end %>
+    </div>
+
+    <div class="select shop">
+      <% @user.favorites.joins(:activity).where(activities: { category: 'Shop' }).each do |favorite| %>
+        <%= render  "shared/activity_cards", activity: favorite.activity %>
+      <% end %>
+    </div>
+    <div class="select atelier">
+      <% @user.favorites.joins(:activity).where(activities: { category: 'Atelier' }).each do |favorite| %>
+        <%= render  "shared/activity_cards", activity: favorite.activity %>
+      <% end %>
+    </div>
+
+    <div class="select restau">
+      <% @user.favorites.joins(:activity).where(activities: { category: 'Restaurant' }).each do |favorite| %>
+        <%= render  "shared/activity_cards", activity: favorite.activity %>
+      <% end %>
+    </div>
+    <div class="select evenement">
+      <% @user.favorites.joins(:activity).where(activities: { category: 'Event' }).each do |favorite| %>
+        <%= render  "shared/activity_cards", activity: favorite.activity %>
+      <% end %>
+    </div>
   </div>
 </div>
+
+
+<script>
+  var button = document.querySelectorAll('.event_l')
+  button.forEach((icon)=> {
+    icon.addEventListener('click', function(event){
+      console.log(event.target.id)
+
+      var all = document.querySelectorAll('.select')
+      var elementSelect = document.querySelectorAll(`.select.${event.target.id}`)
+      console.log(elementSelect)
+      all.forEach((element) => {
+        element.setAttribute('hidden', true);
+      })
+      elementSelect.forEach((element) => {
+        element.removeAttribute('hidden');
+      })
+    })
+    } )
+</script>
+
+
