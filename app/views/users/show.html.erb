@@ -6,8 +6,8 @@
     <h3>Bienvenue <%= @user.profile.first_name %></h3>
     <%= link_to "modifier mon profil", edit_profile_path(current_user), class: "sous-titre" %>
   </div>
-
-  <div>
+  <%# <div class="col-12 sm-3"> %>
+  <div class="display-activity container-fluid">
     <div class="valeur event_l", id="aliment">
       <%= image_tag "Alimentation-n.png", class: "icon-alimentation" %>
       <div>
@@ -16,14 +16,11 @@
         <% end %>
       </div>
     </div>
-  </div>
-  <div class="display-activity container-fluid">
     <div class="select aliment row" hidden>
       <% @user.favorites.joins(:activity).where(activities: { category: 'Alimentation' }).each do |favorite| %>
         <%= render  "shared/activity_cards", activity: favorite.activity %>
       <% end %>
     </div>
-
     <div class="valeur event_l", id="restau">
       <%= image_tag "Restaurant-n.png", class: "icon-restaurant" %>
       <div>
@@ -78,9 +75,7 @@
     <% end %>
   </div>
 </div>
-</div>
-</div>
-
+<%# </div> %>
 <script>
   var button = document.querySelectorAll('.event_l')
   button.forEach((icon)=> {
