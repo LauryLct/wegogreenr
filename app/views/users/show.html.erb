@@ -10,7 +10,7 @@
 
 </div>
   <div>
-    <div class="valeur-1 event_l", id="aliment">
+    <div class="valeur event_l", id="aliment">
 
       <%= image_tag "Alimentation-n.png", class: "icon-alimentation" %>
       <div>
@@ -25,7 +25,7 @@
       <% end %>
     </div>
 
-    <div class="valeur-4 event_l", id="restau">
+    <div class="valeur event_l", id="restau">
 
       <%= image_tag "Restaurant-n.png", class: "icon-restaurant" %>
       <div>
@@ -41,7 +41,7 @@
         <% end %>
       </div>
 
-    <div class="valeur-2 event_l", id="shop">
+    <div class="valeur event_l", id="shop">
 
       <%= image_tag "Shop-n.png", class: "icon-shop" %>
       <div>
@@ -57,7 +57,7 @@
         <% end %>
       </div>
 
-    <div class="valeur-3 event_l", id="atelier">
+    <div class="valeur event_l", id="atelier">
 
       <%= image_tag "DIY-n.png", class: "icon-DIY" %>
       <div>
@@ -73,7 +73,7 @@
         <% end %>
       </div>
 
-    <div class="valeur-4 event_l", id="evenement">
+    <div class="valeur event_l", id="evenement">
 
       <%= image_tag "Event-n.png", class: "icon-event" %>
       <div>
@@ -87,7 +87,6 @@
         <% @user.favorites.joins(:activity).where(activities: { category: 'Event' }).each do |favorite| %>
           <%= render  "shared/activity_cards", activity: favorite.activity %>
         <% end %>
-
       </div>
     </div>
   </div>

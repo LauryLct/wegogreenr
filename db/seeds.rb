@@ -136,6 +136,23 @@ Review.create!(
   user: [laury, daniel, marie, stephane].sample,
   )
 
+  so_bio = Activity.create!(
+  name: "el MARKET",
+  description: "Shop eco-responsable",
+  category: "Shop",
+  street: "128 Rue Léon Gambetta",
+  zipcode: "59000",
+  city: "Lille",
+  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737819/elmarket_aztxhp.png",
+  user: stephane,
+  url: "https://www.elmarket.fr/",
+)
+Review.create!(
+  rate: rand(1..5),
+  activity: el_market,
+  user: [laury, daniel, marie, stephane].sample,
+  )
+
 dechets = Activity.create!(
   name: "World clean up day",
   description: "Ramassons les déchets dans nos quartiers",
