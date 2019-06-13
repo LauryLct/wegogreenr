@@ -2,5 +2,19 @@
   height: 50px;
   padding-left: auto;
   padding-right: auto;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
+}
+
+.card-event {
+  position: relative;
+    i {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 20px;
+    color: yellow;
+    text-shadow: 1px 1px 2px gray;
+  }
 }
