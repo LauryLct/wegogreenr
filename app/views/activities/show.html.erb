@@ -15,13 +15,19 @@
         </span>
       </div>
     </h1>
+    <h2><div class="moyen"><%= render 'shared/stars', activity: @activity %></div></h2>
+    <div class="avg-rate-display">
+      <% if @activity.starting_date.blank? == false %>
+        <p>Du <%= @activity.starting_date.strftime("%d-%m-%Y") %> au <%= @activity.ending_date.strftime("%d-%m-%Y") %></p>
+      <% end %>
+    </div>
     <div class = "d-flex star-rating justify-content-between">
       <% unless current_user.nil? %>
         <% if @activity.reviews.pluck(:user_id).include?(current_user.id)  %>
           <%= "Vous avez déjà voté" %>
         <% elsif %>
           <%= simple_form_for([@activity, @review], html: { class: "review_form" }) do |r| %>
-            <%= r.input :rate, class: "shadow-sm p-3 mb-5 bg-white rounded", label: "donnez votre avis", collection: [1, 2, 3, 4, 5 ] %>
+            <%= r.input :rate, class: "shadow-sm p-3 mb-5 bg-white rounded", label: "donnez votre avis :", collection: [1, 2, 3, 4, 5 ] %>
             <%= r.button :submit, class: "d-none" %>
           <% end %>
         <% end %>
