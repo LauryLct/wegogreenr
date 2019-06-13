@@ -1,15 +1,16 @@
 .ajout {
-  height: 50px;
-  padding-left: auto;
-  padding-right: auto;
+  // height: 50px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-event {
   position: relative;
-    i {
+  i {
     position: absolute;
     top: 16px;
     left: 16px;
