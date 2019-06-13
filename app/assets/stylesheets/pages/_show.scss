@@ -89,7 +89,7 @@
 }
 
 .url-show-activity:hover {
-  text-decoration: none;
+  // text-decoration: none;
 }
 
 .border-bottom {
@@ -97,4 +97,15 @@
   text-align: center;
   margin-right: 20%;
   margin-left: 20%;
+}
+
+.icon-add {
+  width: 50px;
+  margin-right: 40px;
+}
+
+.message-form-button {
+  border-radius: 10px;
+  background-color: white;
+  border-color: #0497bc;
 }
