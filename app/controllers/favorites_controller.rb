@@ -1,5 +1,4 @@
 class FavoritesController < ApplicationController
-
 def create
   @activity = Activity.find(params[:id])
   @favorite = Favorite.new

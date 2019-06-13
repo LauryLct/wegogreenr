@@ -13,3 +13,16 @@
     }
 }
 
+.haut {
+  position: relative;
+  i {
+    position: absolute !important;
+    top: 10px;
+    left: 20px;
+    font-size: 20px;
+    color: yellow;
+    text-shadow: 1px 1px 2px gray;
+  }
+}
+
+

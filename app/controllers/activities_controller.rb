@@ -4,7 +4,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.where.not(latitude: nil, longitude: nil)
-
+    @favorite = isfavorite?(@activity)
     @markers = @activities.map do |activity|
       {
         lat: activity.latitude,
@@ -35,7 +35,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(activity_params)
     @activity.user = current_user
     if @activity.save
-      redirect_to activities_path(@activity)
+      redirect_to activity_path(@activity)
     else
       render :new
     end
