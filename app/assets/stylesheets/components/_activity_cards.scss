@@ -1,0 +1,13 @@
+.card-activity {
+  display: flex;
+  background-color: white;
+  border-radius: 2px;
+  height: 100px;
+  width: 200px;
+  box-shadow: 1px 1px 3px 3px #ccc;
+  overflow: hidden;
+  .card-activity-pic {
+    width: 50%;
+    max-height: 80px;
+  }
+}

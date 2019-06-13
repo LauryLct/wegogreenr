@@ -17,11 +17,15 @@
     <div> <%= image_tag "Shop-n", class: "activity_filter", id: "Shop" %></div>
     <div> <%= image_tag "Logo3-simple-plein", class: "activity_filter", id: "all" %></div>
   </div>
+
+  <div class='sidebar'>
+    <%= link_to new_activity_path do %> <i class="fas fa-plus-circle"></i> <% end %>
+    <%= link_to event_activities_path do %> <i class="far fa-calendar"></i> <% end %>
+    <%= link_to root_path(anchor: "values") do %> <i class="fas fa-info"></i> <% end %>
+
+  </div>
 </div>
 
-<div id="test">
-
-</div>
 
 <script>
   var allIcons = document.querySelectorAll('.activity_filter');

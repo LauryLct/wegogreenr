@@ -4,13 +4,15 @@
     <%= render 'favorites/fav_card', favorite: @favorite %>
   </div>
 </div>
-
 <div class="container">
   <div class="event-txt-show">
     <h1><strong><%= @activity.name %></strong> - <%= link_to edit_activity_path(@activity) do  %>
-        <i class="far fa-edit"></i>
+        <span><i class="far fa-edit"></i></span>
       <% end %>
     </h1>
+    <h2>
+      <div class="moyen"><%= render 'shared/stars', activity: @activity %></div>
+    </h2>
     <div class="avg-rate-display">
       <% if @activity.starting_date.blank? == false %>
         <p>Du <%= @activity.starting_date.strftime("%d-%m-%Y") %> au <%= @activity.ending_date.strftime("%d-%m-%Y") %></p>
@@ -22,38 +24,27 @@
           <%= "Vous avez déjà voté" %>
         <% elsif %>
           <%= simple_form_for([@activity, @review], html: { class: "review_form" }) do |r| %>
-            <%= r.input :rate, class: "shadow-sm p-3 mb-5 bg-white rounded", label: false, collection: [1, 2, 3, 4, 5 ] %>
+            <%= r.input :rate, class: "shadow-sm p-3 mb-5 bg-white rounded", label: "donnez votre avis :", collection: [1, 2, 3, 4, 5 ] %>
             <%= r.button :submit, class: "d-none" %>
           <% end %>
         <% end %>
       <% end %>
-      <% if @activity.reviews.blank? == false %>
-        <p class="avg-rate-display"><strong><%= @activity.reviews.average(:rate).to_f.round(1) %><%= "/5" %></strong></p>
-      <% elsif %>
-        <p class="avg-rate-display"><strong><%= "-/5" %></strong></p>
-      <% end %>
-      <% if @activity.reviews.count != 0 %>
-        <p class="avg-rate-display"><strong>(<%= @activity.reviews.count %> avis)</strong></p>
-      <% elsif %>
-        <p class="avg-rate-display"><strong>(Pas d'avis pour le moment)</strong></p>
+    </div>
+    <div class="avg-rate-display">
+      <% if @activity.starting_date.blank? == false %>
+        <p>Du <%= @activity.starting_date.strftime("%d-%m-%Y") %> au <%= @activity.ending_date.strftime("%d-%m-%Y") %></p>
       <% end %>
     </div>
     <h2>Adresse: </h2>
     <p><i><%= @activity.street %>, <%= @activity.zipcode %>, <%= @activity.city %>.</i></p>
     <% if @activity.url.blank? == false %>
-      <h2>URL: </h2>
       <span><%= link_to "Site web", @activity.url, target: :_blank, class: "url-show-activity"%></span>
     <% end %>
     <h2>Description:</h2>
     <p><%= @activity.description %></p>
-
     <div class="border-bottom"></div>
-
     <h2>Dialoguez avec la communauté : </h2>
   </div>
-
-
   <%= render 'message_box', activity: @activity %>
   <%= render 'messages_send_form', activity: @activity%>
-
 </div>
