@@ -17,19 +17,18 @@
     <% end %>
     <p>Ateliers favoris</p>
     <% fav_ateliers = @user.favorites.map {|favorite| favorite.activity.category == "Atelier" ? favorite :  }.flatten %>
-    <% if fav_ateliers %>
-      <% fav_ateliers.each do |favorite| %>
-        <%= render  "shared/activity_cards", activity: favorite.activity %>
-      <% end %>
-      <p>Restaurants favoris</p>
-      <% fav_resto = @user.favorites.map {|favorite| favorite.activity.category == "Restaurant" ? favorite : '' }.flatten %>
-      <% fav_resto.each do |favorite| %>
-        <%= render  "shared/activity_cards", activity: favorite.activity %>
-      <% end %>
-      <p>Events favoris</p>
-      <% fav_event = @user.favorites.map {|favorite| favorite.activity.category == "Event" ? favorite : '' }.flatten %>
-      <% fav_event.each do |favorite| %>
-        <%= render  "shared/activity_cards", activity: favorite.activity %>
-      <% end %>
-    </div>
+    <% fav_ateliers.each do |favorite| %>
+      <%= render  "shared/activity_cards", activity: favorite.activity %>
+    <% end %>
+    <p>Restaurants favoris</p>
+    <% fav_resto = @user.favorites.map {|favorite| favorite.activity.category == "Restaurant" ? favorite : '' }.flatten %>
+    <% fav_resto.each do |favorite| %>
+      <%= render  "shared/activity_cards", activity: favorite.activity %>
+    <% end %>
+    <p>Events favoris</p>
+    <% fav_event = @user.favorites.map {|favorite| favorite.activity.category == "Event" ? favorite : '' }.flatten %>
+    <% fav_event.each do |favorite| %>
+      <%= render  "shared/activity_cards", activity: favorite.activity %>
+    <% end %>
   </div>
+</div>
