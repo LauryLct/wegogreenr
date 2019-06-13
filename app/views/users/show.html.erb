@@ -78,10 +78,8 @@
 </div>
 <script>
   var button = document.querySelectorAll('.event_l')
-  console.log(button);
   button.forEach((icon)=> {
     icon.addEventListener('click', function(event){
-      console.log(event.currentTarget.id)
       var all = document.querySelectorAll('.select');
       var elementSelect = document.querySelectorAll(`.select.${event.currentTarget.id}`);
       all.forEach((element) => {
