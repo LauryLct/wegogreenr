@@ -139,7 +139,7 @@ Review.create!(
   cap = Activity.create!(
  name: "Cap ou pas cap",
  description: "de nombreux ateliers : informatique, bricolage, cuisine, jardinage...",
- category: "Shop",
+ category: "DIY",
  street: "17 Place Roosevelt",
  zipcode: "33110",
  city: "Le Bouscat",
@@ -270,6 +270,20 @@ dechets = Activity.create!(
   url: "https://www.worldcleanupday.fr/",
 )
 
+dechet = Activity.create!(
+  name: "World clean up day",
+  description: "Ramassons les déchets dans nos quartiers",
+  category: "Event",
+  street: "Place de la bourse",
+  zipcode: "33000",
+  city: "Bordeaux",
+  starting_date: "14/06/2019",
+  ending_date: "14/06/2019",
+  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737829/worldcleanup_m5h0ln.png",
+  user: stephane,
+  url: "https://www.worldcleanupday.fr/",
+)
+
 festival = Activity.create!(
   name: "We Love Green Festival",
   description: "Une super programmation, une organisation eco-friendly",
@@ -277,6 +291,20 @@ festival = Activity.create!(
   street: "12 avenue de verdun",
   zipcode: "59130",
   city: "Lambersart",
+  starting_date: "15/06/2019",
+  ending_date: "16/06/2019",
+  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737824/festival_udaurr.png",
+  user: marie,
+  url: "https://www.welovegreen.fr/",
+)
+
+festival = Activity.create!(
+  name: "We Love Green Festival",
+  description: "Une super programmation, une organisation eco-friendly",
+  category: "Event",
+  street: "Place des quinconces",
+  zipcode: "33000",
+  city: "Bordeaux",
   starting_date: "15/06/2019",
   ending_date: "16/06/2019",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737824/festival_udaurr.png",
