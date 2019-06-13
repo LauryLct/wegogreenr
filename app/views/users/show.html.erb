@@ -7,7 +7,7 @@
   <div class="hearted">
     <%# <% bookings_recus = @user.articles.map {|article| article.bookings.where(status: true)}.flatten %>
     <%# <% bookings_recus.each do |reservation| %>
-      <p>Mags d'alimentation favoris</p>
+      <p>Alimentations favoris</p>
       <% @user.favorites.joins(:activity).where(activities: { category: 'Alimentation' }).each do |favorite| %>
         <%= render  "shared/activity_cards", activity: favorite.activity %>
       <% end %>

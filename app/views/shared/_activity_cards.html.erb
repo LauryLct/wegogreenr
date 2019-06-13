@@ -1,7 +1,7 @@
 <%= link_to activity_path(activity) do %>
-  <div class="card-trip">
-    <%= cl_image_tag activity.photo, height: 50, width: 70, crop: :fill %>
-    <div class="card-trip-infos">
+  <div class="card-activity">
+    <%= cl_image_tag activity.photo, class: "card-activity-pic" %>
+    <div class="card-activity-infos">
       <div>
         <h2><%= activity.name %></h2>
         <p> <%= activity.city %></p>
