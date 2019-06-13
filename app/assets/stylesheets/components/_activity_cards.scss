@@ -1,14 +1,61 @@
-.card-activity {
-  display: flex;
+.container {
+  padding: 20px;
+  color: #045757;
+}
+
+.activity-card {
   background-color: white;
-  border-radius: 2px;
-  height: 100px;
-  width: 200px;
-  box-shadow: 1px 1px 3px 3px #ccc;
+  border-radius: 3px;
+  display: block;
+  align-items: center;
   overflow: hidden;
-  .card-activity-pic {
-    width: 50%;
-    max-height: 80px;
+  text-align: center;
+
+  .activity-pic {
+    height: 200px;
+    margin: auto;
+    width: 100%;
+    object-fit: cover;
+    max-width: 250px;
+  }
+  .info-event {
+    text-align: center;
+    padding: 10px;
+    h2 {
+      font-size: 22px;
+    }
+    p {
+      font-size: 16px;
+    }
   }
 }
 
+// .grid {
+//   display: grid;
+//   grid-gap: 15px;
+//   width: 100%;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-template-rows: 200px;
+// }
+
+// @media (max-width: 1000px) {
+//   .grid {
+//     display: grid;
+//     width: 100%;
+//     grid-template-columns: 1fr 1fr;
+//     grid-template-rows: 200px;
+//   }
+// }
+
+// @media (max-width: 760px) {
+//   .grid {
+//     display: grid;
+//     width: 100%;
+//     grid-template-columns: 1fr;
+//     grid-template-rows: 200px;
+//   }
+// }
+
+.activity-link-show:hover {
+  text-decoration: none;
+}
