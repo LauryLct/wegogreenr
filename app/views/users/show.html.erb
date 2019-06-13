@@ -1,0 +1,31 @@
+<div class="container">
+  <%= render 'shared/avatar' %>
+  <h3>Bienvenue <%= @user.profile.first_name %></h3>
+  <div class="infos">
+    <%= link_to "Voir mon profil", edit_profile_path(current_user)%>
+  </div>
+  <div class="hearted">
+    <%# <% bookings_recus = @user.articles.map {|article| article.bookings.where(status: true)}.flatten %>
+    <%# <% bookings_recus.each do |reservation| %>
+      <p>Alimentations favoris</p>
+      <% @user.favorites.joins(:activity).where(activities: { category: 'Alimentation' }).each do |favorite| %>
+        <%= render  "shared/activity_cards", activity: favorite.activity %>
+      <% end %>
+      <p>Shops favoris</p>
+      <% @user.favorites.joins(:activity).where(activities: { category: 'Shop' }).each do |favorite| %>
+        <%= render  "shared/activity_cards", activity: favorite.activity %>
+      <% end %>
+      <p>Ateliers favoris</p>
+      <% @user.favorites.joins(:activity).where(activities: { category: 'Atelier' }).each do |favorite| %>
+        <%= render  "shared/activity_cards", activity: favorite.activity %>
+      <% end %>
+      <p>Restaurants favoris</p>
+      <% @user.favorites.joins(:activity).where(activities: { category: 'Restaurant' }).each do |favorite| %>
+        <%= render  "shared/activity_cards", activity: favorite.activity %>
+      <% end %>
+      <p>Events favoris</p>
+      <% @user.favorites.joins(:activity).where(activities: { category: 'Event' }).each do |favorite| %>
+        <%= render  "shared/activity_cards", activity: favorite.activity %>
+      <% end %>
+    </div>
+  </div>
