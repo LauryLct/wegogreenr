@@ -1,6 +1,6 @@
 .avatar {
   margin: auto;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   height: 100px;
   width: 100px;
 }
@@ -11,29 +11,45 @@
 }
 
 .icon-alimentation {
-  width: 60px;
-  margin-right: 40px;
+  width: 50px;
+  margin-right: 20px;
 }
 .icon-DIY {
-  width: 60px;
-  margin-right: 40px;
+  width: 50px;
+  margin-right: 20px;
 }
 
 .icon-shop {
-  width: 60px;
-  margin-right: 40px;
+  width: 50px;
+  margin-right: 20px;
 }
 
 .icon-restaurant {
-  width: 60px;
-  margin-right: 40px;
+  width: 50px;
+  margin-right: 20px;
 }
 
 .icon-event {
-  width: 60px;
-  margin-right: 40px;
+  width: 50px;
+  margin-right: 20px;
 }
 
-.valeur-1 {
-  margin-top: 20px;
+.valeur {
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  color: #045757;
+  h5 {
+    margin-bottom: 0;
+  }
+  // margin-bottom: 5px;
+}
+
+.sous-cat {
+  margin-top: 50px;
+}
+
+.sous-titre {
+  color: #045757;
+  font-size: 19px;
 }
