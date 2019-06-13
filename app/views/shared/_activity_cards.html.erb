@@ -12,3 +12,8 @@
     </div>
   </div>
 <% end %>
+
+<% @user.favorites.joins(:activity).where(activities: { category: 'Alimentation' }).each do |favorite| %>
+  <%= render  "shared/activity_cards", activity: favorite.activity %>
+<% end %>
+
