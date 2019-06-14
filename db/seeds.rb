@@ -271,15 +271,15 @@ dechets = Activity.create!(
 )
 
 dechet = Activity.create!(
-  name: "World clean up",
+  name: "World clean up Bordeaux",
   description: "Ramassons les déchets dans nos quartiers",
   category: "Event",
   street: "Place de la bourse",
   zipcode: "33000",
   city: "Bordeaux",
-  starting_date: "14/06/2019",
-  ending_date: "14/06/2019",
-  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737829/worldcleanup_m5h0ln.png",
+  starting_date: "25/06/2019",
+  ending_date: "26/06/2019",
+  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560444870/world_clean_up_rqohrg.png",
   user: stephane,
   url: "https://www.worldcleanupday.fr/",
 )
@@ -299,15 +299,15 @@ festival = Activity.create!(
 )
 
 festivalbx = Activity.create!(
-  name: "We Love Green Festival",
+  name: "Eco Festival Bordeaux",
   description: "Une super programmation, une organisation eco-friendly",
   category: "Event",
   street: "Place des quinconces",
   zipcode: "33000",
   city: "Bordeaux",
-  starting_date: "15/06/2019",
-  ending_date: "16/06/2019",
-  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737824/festival_udaurr.png",
+  starting_date: "17/06/2019",
+  ending_date: "19/06/2019",
+  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560444934/festival_bx_yxenky.jpg",
   user: marie,
   url: "https://www.welovegreen.fr/",
 )
