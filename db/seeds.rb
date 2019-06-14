@@ -34,9 +34,9 @@ laury = User.create!(
 Profile.create!(
   first_name: "Laury",
   last_name: "Lecaut",
-  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560441467/Laury-squared_ukxtys.jpg",
+  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560443525/teqpoxj6giue8br5hikm.jpg",
   age: 32,
-  nickname: "GreenDevOfTheWorldAndUniverse",
+  nickname: "SuperGreenDev",
   user: laury,
 )
 
@@ -48,7 +48,7 @@ Profile.create!(
   first_name: "Stephane",
   last_name: "Vincent",
   remote_photo_url: "https://avatars1.githubusercontent.com/u/49432207?s=400&u=1756ce57a7fe5c8797ce7ff831587da1868714f7&v=4",
-  nickname: "The Dictator",
+  nickname: "Trello Geek",
   age: 36,
   user: stephane,
 )
@@ -61,7 +61,7 @@ Profile.create!(
   first_name:  "Marie",
   last_name: "Vincent",
   remote_photo_url: "https://avatars2.githubusercontent.com/u/49431430?s=460&v=4",
-  nickname: "Marie-Pierre V",
+  nickname: "Green MaMa",
   age: 32,
   user: marie,
 )
@@ -80,7 +80,7 @@ so_bio = Activity.create!(
  url: "http://www.bio-c-bon.eu/",
 )
 Review.create!(
-  rate: rand(1..5),
+  rate: rand(4..5),
   activity: so_bio,
   user: [laury, daniel, marie, stephane].sample,
   )
@@ -165,9 +165,19 @@ la_classe = Activity.create!(
  url: "https://fr-fr.facebook.com/lecirque.lille/",
 )
 Review.create!(
-  rate: rand(3..5),
+  rate: 5,
   activity: la_classe,
-  user: [laury, daniel, marie, stephane].sample,
+  user: laury,
+  )
+  Review.create!(
+  rate: 5,
+  activity: la_classe,
+  user: daniel,
+  )
+  Review.create!(
+  rate: 5,
+  activity: la_classe,
+  user: marie,
   )
 
 
@@ -183,7 +193,7 @@ le_cirque = Activity.create!(
  url: "https://fr-fr.facebook.com/lecirque.lille/",
 )
 Review.create!(
-  rate: rand(1..5),
+  rate: rand(4..5),
   activity: le_cirque,
   user: [laury, daniel, marie, stephane].sample,
   )
@@ -200,8 +210,53 @@ robin = Activity.create!(
  url: "https://www.robindesbio.org/",
 )
 Review.create!(
-  rate: rand(1..5),
+  rate: 4,
   activity: robin,
+  user: laury,
+  )
+Review.create!(
+  rate: 4,
+  activity: robin,
+  user: daniel,
+  )
+  Review.create!(
+  rate: 4,
+  activity: robin,
+  user: marie,
+  )
+
+alim1 = Activity.create!(
+ name: "Bio c'est bon",
+ description: "Alimentation et boissons 100% Bio",
+ category: "Alimentation",
+ street: "10 Rue Montaigne",
+ zipcode: "59000",
+ city: "Lille",
+ remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560506116/biocbon_rvkjm0.jpg",
+ user: laury,
+ url: "https://www.biocestbon.com/",
+)
+Review.create!(
+  rate: rand(1..3),
+  activity: alim1,
+  user: [laury, daniel, marie].sample,
+  )
+
+
+  alim2 = Activity.create!(
+ name: "Day by Day",
+ description: "Vrac et Bio, pensez à vos bocaux!",
+ category: "Alimentation",
+ street: "12 Rue d'alger",
+ zipcode: "59000",
+ city: "Lille",
+ remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560506327/dbd_vukcyy.jpg",
+ user: laury,
+ url: "https://www.robindesbio.org/",
+)
+Review.create!(
+  rate: rand(1..3),
+  activity: alim2,
   user: [laury, daniel, marie, stephane].sample,
   )
 
@@ -217,7 +272,7 @@ biloba = Activity.create!(
   url:"https://mademoiselle-biloba.fr/",
 )
 Review.create!(
-  rate: rand(1..5),
+  rate: rand(3..5),
   activity: biloba,
   user: [laury, daniel, marie, stephane].sample,
   )
@@ -234,7 +289,7 @@ el_market = Activity.create!(
   url: "https://www.elmarket.fr/",
 )
 Review.create!(
-  rate: rand(1..5),
+  rate: rand(3..5),
   activity: el_market,
   user: [laury, daniel, marie, stephane].sample,
   )
@@ -251,7 +306,7 @@ so_bio = Activity.create!(
   url: "https://www.elmarket.fr/",
 )
 Review.create!(
-  rate: rand(1..5),
+  rate: rand(3..5),
   activity: el_market,
   user: [laury, daniel, marie, stephane].sample,
   )
@@ -277,8 +332,8 @@ dechet = Activity.create!(
   street: "Place de la bourse",
   zipcode: "33000",
   city: "Bordeaux",
-  starting_date: "25/06/2019",
-  ending_date: "26/06/2019",
+  starting_date: "14/06/2019",
+  ending_date: "14/06/2019",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560444870/world_clean_up_rqohrg.png",
   user: stephane,
   url: "https://www.worldcleanupday.fr/",
@@ -291,8 +346,8 @@ festival = Activity.create!(
   street: "12 avenue de verdun",
   zipcode: "59130",
   city: "Lambersart",
-  starting_date: "15/06/2019",
-  ending_date: "16/06/2019",
+  starting_date: "29/06/2019",
+  ending_date: "30/06/2019",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1559737824/festival_udaurr.png",
   user: marie,
   url: "https://www.welovegreen.fr/",
@@ -305,8 +360,8 @@ festivalbx = Activity.create!(
   street: "Place des quinconces",
   zipcode: "33000",
   city: "Bordeaux",
-  starting_date: "17/06/2019",
-  ending_date: "19/06/2019",
+  starting_date: "22/06/2019",
+  ending_date: "23/06/2019",
   remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560444934/festival_bx_yxenky.jpg",
   user: marie,
   url: "https://www.welovegreen.fr/",
@@ -434,20 +489,20 @@ puts "all activities created"
 message_1 = Message.create!(
   content: "Salut ! Quelqu'un a déjà testé ce restaurant ?",
   user: stephane,
-  activity: bis_2_fly,
+  activity: la_classe,
 
   )
 
 message_2 = Message.create!(
   content: "Salut Marie, J'y vais ce weekend normalement, je vous dirai ce que j'en pense",
   user: laury,
-  activity: bis_2_fly,
+  activity: la_classe,
   )
 
 message_3 = Message.create!(
   content: "Salut, C'est vraiment très bon, et super ambiance, je le conseille",
   user: daniel,
-  activity: bis_2_fly,
+  activity: la_classe,
   )
 
 puts "All messages created"
