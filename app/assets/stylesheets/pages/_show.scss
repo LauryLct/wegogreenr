@@ -43,12 +43,13 @@
 .message {
   max-height: 80vh;
   .message-body {
-    border: 1px solid #0497bc;
+    border: 1px solid #6FC2D0;
     background-color: white;
-    color: #0497bc;
+    color: #6FC2D0;
     // width: fit-content;
     display: inline-block;
     width: auto;
+    font-size: 16px;
     padding: 2px 12px;
     margin: 0px 5px;
     border-radius: 50px;
@@ -63,7 +64,9 @@
   align-self: flex-end;
   text-align: right;
   .message-body {
-    background-color: #0497bc;
+    background-color: #6FC2D0;
+    font-weight: bold;
+    font-size: 16px;
     color: white;
     width: fit-content;
     // display: inline-block;
