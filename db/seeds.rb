@@ -97,7 +97,7 @@ ptit_bio = Activity.create!(
  url: "http://riedel.unblog.fr/",
 )
 Review.create!(
-  rate: rand(1..5),
+  rate: rand(3..5),
   activity: ptit_bio,
   user: [laury, daniel, marie, stephane].sample,
   )
@@ -114,7 +114,7 @@ colibris = Activity.create!(
  url: "http://riedel.unblog.fr/",
 )
 Review.create!(
-  rate: rand(1..5),
+  rate: rand(3..5),
   activity: colibris,
   user: [laury, daniel, marie, stephane].sample,
   )
@@ -131,7 +131,7 @@ artisans = Activity.create!(
  url: "http://bordeaux.artisansdumonde.org",
 )
 Review.create!(
-  rate: rand(1..5),
+  rate: rand(3..5),
   activity: artisans,
   user: [laury, daniel, marie, stephane].sample,
   )
@@ -148,7 +148,7 @@ cap = Activity.create!(
  url: "http://bouscat-solidarite.fr/",
 )
 Review.create!(
-  rate: rand(1..5),
+  rate: rand(3..5),
   activity: cap,
   user: [laury, daniel, marie, stephane].sample,
   )
@@ -165,7 +165,7 @@ la_classe = Activity.create!(
  url: "https://fr-fr.facebook.com/lecirque.lille/",
 )
 Review.create!(
-  rate: rand(1..5),
+  rate: rand(3..5),
   activity: la_classe,
   user: [laury, daniel, marie, stephane].sample,
   )
@@ -433,7 +433,7 @@ puts "all activities created"
 
 message_1 = Message.create!(
   content: "Salut ! Quelqu'un a déjà testé ce restaurant ?",
-  user: marie,
+  user: stephane,
   activity: bis_2_fly,
 
   )
