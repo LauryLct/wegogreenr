@@ -34,7 +34,7 @@ laury = User.create!(
 Profile.create!(
   first_name: "Laury",
   last_name: "Lecaut",
-  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560443525/teqpoxj6giue8br5hikm.jpg",
+  remote_photo_url: "https://res.cloudinary.com/dom4dvol9/image/upload/v1560497283/Laury-squared_tkadmj.jpg",
   age: 32,
   nickname: "SuperGreenDev",
   user: laury,
